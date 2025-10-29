@@ -56,7 +56,14 @@ const sorted = [...HistoryData].sort((a, b) => {
     return a.firstResultDiscovery ? -1 : 1;
   }
 
-  // 3. tertiary: sort by result, but push "abstract mess" to the end
+  // 3. tertiary: sort by painter presence (known painters first)
+  const aHasPainter = !!a.painter && a.painter.trim() !== "";
+  const bHasPainter = !!b.painter && b.painter.trim() !== "";
+  if (aHasPainter !== bHasPainter) {
+    return aHasPainter ? -1 : 1;
+  }
+
+  // 4. final: sort by result, but push "abstract mess" to the end
   const aIsAbstract = a.result.toLowerCase() === "abstract mess";
   const bIsAbstract = b.result.toLowerCase() === "abstract mess";
 
@@ -66,6 +73,7 @@ const sorted = [...HistoryData].sort((a, b) => {
   // normal alphabetical compare if neither/both are "abstract mess"
   return a.result.localeCompare(b.result, undefined, { sensitivity: "base" });
 });
+
 
 const grouped = groupByMonth(sorted);
 
