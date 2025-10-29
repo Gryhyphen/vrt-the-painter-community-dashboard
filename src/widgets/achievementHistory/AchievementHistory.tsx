@@ -35,15 +35,15 @@ const groupByMonth = (data: Achievement[]): Record<string, Achievement[]> => {
   });
 
   return Object.groupBy(data, (item) =>
-    formatter.format(new Date(item.dateDiscovered))
+    formatter.format(new Date(item.datePainted))
   ) as Record<string, Achievement[]>; // I don't understand why groupby returns partials :(
 };
 
 const sorted = [...HistoryData].sort((a, b) => {
   // 1. primary: sort by date (newest first)
   const dateDiff =
-    new Date(b.dateDiscovered).getTime() -
-    new Date(a.dateDiscovered).getTime();
+    new Date(b.datePainted).getTime() -
+    new Date(a.datePainted).getTime();
   if (dateDiff !== 0) return dateDiff;
 
   // 2. secondary: sort by firstResultDiscovery (true first)
@@ -136,10 +136,10 @@ export default function AchievementHistory(props: IAchievementHistoryProps) {
                       {x.result}
                     </div>
                     <div style={{ fontSize: "0.85rem", color: "#777" }}>
-                      <strong>{x.dateDiscovered}</strong>
+                      <strong>{x.datePainted}</strong>
                     </div>
                     <div style={{ fontSize: "0.85rem", color: "#555" }}>
-                      <strong>Painted by:</strong> <em>(unknown)</em>
+                      <strong>Painted by:</strong> <em>{x.painter ?? "(unknown)"}</em>
                     </div>
                     <div
                       style={{
