@@ -8,7 +8,7 @@ function App() {
     <div style={{ fontFamily: "sans-serif" }}>
       <h1>VRT: The Painter 1 Revised - Community Dashboard</h1>
       <div style={{ fontSize: "0.85rem", color: "#555", marginBottom: "1rem" }}>
-        <strong>Version:</strong> 2025.10.06 — Data last refreshed on October 6,
+        <strong>Version:</strong> 2025.10.29 — Data last refreshed on October 29,
         2025
       </div>
 

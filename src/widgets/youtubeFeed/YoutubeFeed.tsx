@@ -24,7 +24,6 @@ const YoutubeFeed: React.FC<Props> = ({ videoUrls }) => {
   return (
     <div
       style={{
-        maxHeight: '900px',
         overflowY: 'auto',
         padding: '0.5rem',
         borderRadius: '8px',
