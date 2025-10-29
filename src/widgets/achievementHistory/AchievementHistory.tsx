@@ -23,6 +23,11 @@ const emojiForResult = (result: string): string => {
   if (normalized.includes("land afar")) return "🌍";
   if (normalized.includes("heart")) return "❤️";
   if (normalized.includes("abstract")) return "🎨";
+  if (normalized.includes("above the clouds")) return "☁️";
+  if (normalized.includes("soup kitchen")) return "🥣";
+  if (normalized.includes("corroding scrap")) return "🛠️";
+  if (normalized.includes("crowd of travellers")) return "👨‍👩‍👧‍👦";
+  if (normalized.includes("university-bound students")) return "🎓";
   return "✨";
 };
 
