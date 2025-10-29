@@ -1,5 +1,5 @@
 import Select from "react-select";
-import PigmentData from "../../assets/pigmentCombos/data/cleaned/CleanedPigments-2025-10-05.json";
+import PigmentData from "../../assets/pigmentCombos/data/enriched/enrichedPigments.json";
 import { useMemo, useState } from "react";
 import lunr from "lunr";
 
