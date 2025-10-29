@@ -38,7 +38,7 @@ function App() {
       <ColorMixer />
       <div
         style={{
-          marginTop: 12,
+          marginTop: 20,
           display: "flex",
           flexWrap: "wrap", // allow right column to wrap under left
           gap: 20, // spacing between columns
