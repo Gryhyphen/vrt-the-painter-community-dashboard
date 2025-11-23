@@ -1,6 +1,6 @@
 import "leaflet/dist/leaflet.css";
-import { GeoJSON, MapContainer } from "react-leaflet";
-import L, { CircleMarker } from "leaflet";
+import { GeoJSON, ImageOverlay, MapContainer } from "react-leaflet";
+import L from "leaflet";
 import type { FeatureCollection, Point } from "geojson";
 import rawLandmarkData from "../../assets/worldData/landmarksGeo.json";
 const landmarkData = rawLandmarkData as FeatureCollection<Point>;
@@ -56,7 +56,67 @@ function createSparkleIcon(shadowColor = "#9d00ff") {
   });
 }
 
+const imageData = [
+  {
+    name: "DazilResized.png",
+    zoneId: "dazil",
+    placement: { x: -289.2, y: 129.1, width: 173.85, height: 97.79 },
+  },
+  {
+    name: "LahanVillageResized.png",
+    zoneId: "lahanVillage",
+    placement: { x: -59.22, y: 74.95, width: 129.04, height: 134.53 },
+  },
+  {
+    name: "BledavikResized.png",
+    zoneId: "bledavik",
+    placement: { x: -254.38, y: 305.26, width: 79.64, height: 125.01 },
+  },
+  {
+    name: "Bledavik2Resized.png",
+    zoneId: "bledavik_2",
+    placement: { x: -417.13, y: -42.49, width: 86.76, height: 85.99 },
+  },
+  {
+    name: "SandCaven1Resized.png",
+    zoneId: "sandcavern",
+    placement: { x: -488.24, y: -398.77, width: 108.87, height: 154.46 },
+  },
+  {
+    name: "Nortune1Resize.png",
+    zoneId: "nortune",
+    placement: { x: -629.75, y: 330.75, width: 122.33, height: 142.29 },
+  },
+  {
+    name: "Noctune2Resize.png",
+    zoneId: "nortune_2",
+    placement: { x: -639.22, y: 112.25, width: 134, height: 174.93 },
+  },
+];
 
+const mapImageModules = import.meta.glob(
+  "/src/assets/worlddata/mapimages/*.png",
+  { eager: true, query: "?url", import: "default" }
+);
+
+function getImageUrl(fileName: string) {
+  const fullPath = `/src/assets/worlddata/mapimages/${fileName}`;
+  return mapImageModules[fullPath] as string;
+}
+
+function getImageBounds(p: {
+  height: number;
+  width: number;
+  x: number;
+  y: number;
+}) {
+  return [
+    [p.x, -p.y], // Top-Left
+    [p.x + p.width, -(p.y + p.height)], // Bottom-Right
+  ] as L.LatLngBoundsExpression;
+}
+
+/**
 export default function WorldMap(props: IProps) {
   return (
     <div
@@ -70,11 +130,25 @@ export default function WorldMap(props: IProps) {
       <h2>World Map</h2>
       <MapContainer
         crs={CustomCRS}
-        style={{ height: "80vh" }}
+        style={{ height: "100%", width: "100%" }}
         center={[0, 0]}
         zoom={0}
         minZoom={-5}
       >
+{imageData.map((img) => {
+          const bounds = getImageBounds(img.placement);
+          const imageUrl = getImageUrl(img.name);
+          if (!imageUrl) return null;
+          return (
+            <ImageOverlay
+              key={img.zoneId}
+              url={imageUrl}
+              bounds={bounds}
+              opacity={1}
+              zIndex={10}
+            />
+          );
+        })}
         <GeoJSON
           data={landmarkData}
           pointToLayer={(feature, latlng) =>
@@ -87,7 +161,7 @@ export default function WorldMap(props: IProps) {
           onEachFeature={(feature, layer) => {
             if (feature.properties?.name) {
               layer.bindTooltip(feature.properties.name, {
-                permanent: false, // or true if you want always visible
+                permanent: false,
                 direction: "top",
               });
             }
