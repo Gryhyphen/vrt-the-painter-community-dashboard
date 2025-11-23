@@ -2,6 +2,7 @@ import YoutubeFeed from "./widgets/youtubeFeed/YoutubeFeed";
 import youtubeData from "./assets/youtubeData/youtubeData.ts";
 import AchievementHistory from "./widgets/achievementHistory/AchievementHistory.tsx";
 import ColorMixer from "./widgets/colorMixer/ColorMixer.tsx";
+import WorldMap from "./widgets/worldMap/WorldMap.tsx";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
         </p>
       </div>
       <ColorMixer />
+      <WorldMap style={{marginTop: 20}} />
       <div
         style={{
           marginTop: 20,
