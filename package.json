@@ -15,10 +15,12 @@
     "lunr": "^2.3.9",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "react-leaflet": "^5.0.0",
     "react-select": "^5.10.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",
+    "@types/leaflet": "^1.9.21",
     "@types/lunr": "^2.3.7",
     "@types/node": "^24.6.0",
     "@types/react": "^19.1.16",
