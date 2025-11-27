@@ -37,7 +37,7 @@ function App() {
         </p>
       </div>
       <ColorMixer />
-      <WorldMap style={{marginTop: 20}} />
+      <WorldMap style={{marginTop: 20, height: "80vh"}} />
       <div
         style={{
           marginTop: 20,

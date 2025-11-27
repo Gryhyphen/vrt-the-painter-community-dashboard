@@ -1,9 +1,26 @@
 import "leaflet/dist/leaflet.css";
-import { GeoJSON, ImageOverlay, MapContainer } from "react-leaflet";
 import L from "leaflet";
+import { ImageOverlay, MapContainer, GeoJSON } from "react-leaflet";
+import createSparkleIcon from "./components/SparkleIcon";
+import backgroundGeo from "../../assets/worldData/mapimages/backgroundGeo.json";
 import type { FeatureCollection, Point } from "geojson";
-import rawLandmarkData from "../../assets/worldData/landmarksGeo.json";
-const landmarkData = rawLandmarkData as FeatureCollection<Point>;
+import rawLandmarkGeo from "../../assets/worldData/landmarksGeo.json";
+import { useEffect, useRef, useState } from "react";
+import { Sheet, type SheetRef } from "react-modal-sheet";
+import { useTransform } from "motion/react";
+const landmarkGeo = rawLandmarkGeo as FeatureCollection<Point>;
+
+interface IProps {
+  style?: React.CSSProperties;
+}
+
+// --- Trick prettier ---
+
+// lets prettier format my css strings correctly without me using js-in-css
+// (this is the identity for template literals)
+function css(strings: TemplateStringsArray, ...exprs: unknown[]): string {
+  return String.raw({ raw: strings }, ...exprs);
+}
 
 // --- Custom CRS ---
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -22,152 +39,352 @@ const CustomCRS = L.extend({}, L.CRS.Simple, {
   },
 });
 
-interface IProps {
-  style?: React.CSSProperties;
-}
-
-function createSparkleIcon(shadowColor = "#9d00ff") {
-  return L.divIcon({
-    html: `
-      <div style="
-        width: 32px;
-        height: 32px;
-        background-color: rgba(20, 20, 20, 0.75);
-        border-radius: 50%;
-        border: 1px solid rgba(255, 255, 255, 0.7);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: transform 0.2s ease;
-      ">
-        <span style="
-          display: block;
-          text-shadow: 0 0 0 ${shadowColor};
-          font-size: 18px;
-          color: transparent;
-          user-select: none;
-        ">⭐</span>
-      </div>
-    `,
-    className: "", // no external css (otherwise it has a default)
-    iconSize: [32, 32],
-    iconAnchor: [16, 16],
-    popupAnchor: [0, -18],
-  });
-}
-
-const imageData = [
-  {
-    name: "DazilResized.png",
-    zoneId: "dazil",
-    placement: { x: -289.2, y: 129.1, width: 173.85, height: 97.79 },
-  },
-  {
-    name: "LahanVillageResized.png",
-    zoneId: "lahanVillage",
-    placement: { x: -59.22, y: 74.95, width: 129.04, height: 134.53 },
-  },
-  {
-    name: "BledavikResized.png",
-    zoneId: "bledavik",
-    placement: { x: -254.38, y: 305.26, width: 79.64, height: 125.01 },
-  },
-  {
-    name: "Bledavik2Resized.png",
-    zoneId: "bledavik_2",
-    placement: { x: -417.13, y: -42.49, width: 86.76, height: 85.99 },
-  },
-  {
-    name: "SandCaven1Resized.png",
-    zoneId: "sandcavern",
-    placement: { x: -488.24, y: -398.77, width: 108.87, height: 154.46 },
-  },
-  {
-    name: "Nortune1Resize.png",
-    zoneId: "nortune",
-    placement: { x: -629.75, y: 330.75, width: 122.33, height: 142.29 },
-  },
-  {
-    name: "Noctune2Resize.png",
-    zoneId: "nortune_2",
-    placement: { x: -639.22, y: 112.25, width: 134, height: 174.93 },
-  },
-];
-
+// --- Image data ---
 const mapImageModules = import.meta.glob(
   "/src/assets/worlddata/mapimages/*.png",
   { eager: true, query: "?url", import: "default" }
 );
 
-function getImageUrl(fileName: string) {
-  const fullPath = `/src/assets/worlddata/mapimages/${fileName}`;
-  return mapImageModules[fullPath] as string;
+function getImageProps(item: (typeof backgroundGeo.features)[number]) {
+  function getImageUrl(fileName: string) {
+    const fullPath = `/src/assets/worlddata/mapimages/${fileName}`;
+    return mapImageModules[fullPath] as string;
+  }
+
+  function getImageBounds(p: {
+    height: number;
+    width: number;
+    x: number;
+    y: number;
+  }) {
+    return [
+      [p.x, -p.y], // Top-Left
+      [p.x + p.width, -(p.y + p.height)], // Bottom-Right
+    ] as L.LatLngBoundsExpression;
+  }
+
+  return {
+    key: item.id,
+    url: getImageUrl(item.properties.image),
+    bounds: getImageBounds(item.properties.placement),
+  };
 }
 
-function getImageBounds(p: {
-  height: number;
-  width: number;
-  x: number;
-  y: number;
-}) {
-  return [
-    [p.x, -p.y], // Top-Left
-    [p.x + p.width, -(p.y + p.height)], // Bottom-Right
-  ] as L.LatLngBoundsExpression;
-}
+// --- Menu button ---
 
-/**
+const POSITION_CLASSES = {
+  bottomleft: "leaflet-bottom leaflet-left",
+  bottomright: "leaflet-bottom leaflet-right",
+  topleft: "leaflet-top leaflet-left",
+  topright: "leaflet-top leaflet-right",
+};
+
+const snapPoints = [0, 0.5, 1];
+
 export default function WorldMap(props: IProps) {
+  const mapRef = useRef<L.Map | null>(null);
+  useEffect(() => {
+    setTimeout(() => {
+      const map = mapRef.current;
+      if (!map) throw new Error("Map wasn't loaded!");
+
+      map.zoomControl.setPosition("bottomright");
+    }, 0);
+  }, []);
+
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const ref = useRef<SheetRef>(null);
+  // Add padding bottom based on how far the sheet is from being fully open
+  const paddingBottom = useTransform(() => {
+    return ref.current?.y.get() ?? 0;
+  });
+  const [activeZone, setActiveZone] = useState("lahanVillage");
+  useEffect(() => {
+    const backgroundGeoElement = backgroundGeo.features.find(
+      (x) => x.id === activeZone
+    );
+    if (!backgroundGeoElement) return;
+    mapRef.current?.fitBounds(getImageProps(backgroundGeoElement).bounds, { animate: true, duration: 1 });
+  });
+  // lil hack to make the first time someone clicks on an item, it brings up the menu
+  const [activePickup, setActivePickup] = useState("none selected");
+
   return (
-    <div
-      style={{
-        padding: "0.5rem",
-        borderRadius: "8px",
-        backgroundColor: "#f9f9f9",
-        ...props?.style,
-      }}
-    >
-      <h2>World Map</h2>
-      <MapContainer
-        crs={CustomCRS}
-        style={{ height: "100%", width: "100%" }}
-        center={[0, 0]}
-        zoom={0}
-        minZoom={-5}
-      >
-{imageData.map((img) => {
-          const bounds = getImageBounds(img.placement);
-          const imageUrl = getImageUrl(img.name);
-          if (!imageUrl) return null;
-          return (
-            <ImageOverlay
-              key={img.zoneId}
-              url={imageUrl}
-              bounds={bounds}
-              opacity={1}
-              zIndex={10}
-            />
-          );
-        })}
-        <GeoJSON
-          data={landmarkData}
-          pointToLayer={(feature, latlng) =>
-            L.marker(latlng, {
-              icon: createSparkleIcon(
-                feature.properties?.category === "item" ? "#9d00ff" : "#ffffff"
-              ),
-            })
-          }
-          onEachFeature={(feature, layer) => {
-            if (feature.properties?.name) {
-              layer.bindTooltip(feature.properties.name, {
-                permanent: false,
-                direction: "top",
-              });
+    <>
+      <div style={{ ...props.style }}>
+        <MapContainer
+          ref={mapRef}
+          crs={CustomCRS}
+          style={{ height: "100%", width: "100%" }}
+          center={[0, 0]}
+          zoom={0}
+          minZoom={-5}
+        >
+          <div
+            className={POSITION_CLASSES["topleft"]}
+            style={{ display: "flex" }}
+          >
+            <div
+              className="leaflet-control leaflet-bar"
+              style={{ alignSelf: "center" }}
+            >
+              <a
+                href="#"
+                role="button"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setDrawerOpen((current) => !current);
+                }}
+              >
+                <span aria-hidden="true">☰</span>
+              </a>
+            </div>
+          </div>
+          {backgroundGeo.features.map((img) => {
+            return (
+              <ImageOverlay
+                {...getImageProps(img)}
+                key={getImageProps(img).key}
+                opacity={1}
+                zIndex={10}
+              />
+            );
+          })}
+          <GeoJSON
+            data={landmarkGeo}
+            pointToLayer={(feature, latlng) =>
+              L.marker(latlng, {
+                icon: createSparkleIcon(
+                  feature.properties?.category === "item"
+                    ? "#9d00ff"
+                    : "#ffffff"
+                ),
+              })
             }
-          }}
-        />
-      </MapContainer>
-    </div>
+            onEachFeature={(feature, layer) => {
+              if (feature.properties?.name) {
+                layer.bindTooltip(feature.properties.name, {
+                  permanent: false,
+                  direction: "top",
+                });
+              }
+            }}
+          />
+        </MapContainer>
+
+        <Sheet
+          ref={ref}
+          isOpen={drawerOpen}
+          onClose={() => setDrawerOpen(false)}
+          snapPoints={snapPoints}
+          initialSnap={1}
+        >
+          <Sheet.Container>
+            <Sheet.Header style={{ backgroundColor: "rgb(249, 249, 249)" }} />
+            <Sheet.Content
+              scrollStyle={{ paddingBottom }}
+              disableDrag
+              className="inspector"
+            >
+              <style>
+                {css`
+                  .inspector {
+                    font-family: sans-serif;
+
+                    menu {
+                      margin: 0;
+                      padding: 0;
+                      list-style: none;
+                    }
+
+                    li {
+                      padding: 12px 15px;
+                      border-bottom: 1px solid #2a2a2a;
+
+                      font-size: 14px;
+                      cursor: pointer;
+                      transition: all 0.2s;
+
+                      //   &:last-child {
+                      //     border-bottom: none;
+                      //   }
+
+                      &.active {
+                        border-left: 4px solid #9d00ff;
+                        background: #b2b2b2;
+                      }
+
+                      &:hover {
+                        background: #e0e0e0;
+                      }
+                    }
+
+                    .tabs {
+                      display: grid;
+                      grid-template-columns: repeat(3, 1fr);
+                      grid-template-rows: auto 1fr;
+
+                      details {
+                        display: grid;
+                        grid-column: 1 / -1;
+                        grid-row: 1 / span 2;
+                        grid-template-columns: subgrid;
+                        grid-template-rows: subgrid;
+
+                        &::details-content {
+                          grid-row: 2;
+                          grid-column: 1 / -1;
+                          padding: 1rem;
+                          z-index: 1;
+                        }
+                        &:not([open])::details-content {
+                          display: none;
+                        }
+                        &[open] > summary {
+                          pointer-events: none;
+                        }
+                      }
+
+                      summary {
+                        background-color: rgb(249, 249, 249);
+                        grid-column: var(--n) / span 1;
+                        grid-row: 1;
+                        display: grid;
+                        cursor: pointer;
+                        z-index: 1;
+                        grid-template-rows: auto auto;
+                        justify-items: center;
+                        align-items: center;
+                        position: sticky;
+                        top: 0;
+                        z-index: 10;
+                      }
+
+                      details[open] summary {
+                        font-weight: bold;
+
+                        .pill {
+                          display: inline-flex;
+                          align-items: center;
+                          justify-content: center;
+                          background-color: rgba(157, 0, 255, 0.2);
+                          border-radius: 9999px;
+                          padding: 0.2rem 1.25rem;
+                          transition: padding 0.3s ease-in-out;
+                        }
+                      }
+                      .pill {
+                        padding: 0.2rem 0rem;
+                      }
+                    }
+                  }
+                `}
+              </style>
+              <div className="tabs">
+                <details name="alpha" open>
+                  <summary
+                    style={{
+                      gridColumn: "1 / span 1",
+                    }}
+                  >
+                    <span className="pill">
+                      <span
+                        style={{ fontSize: "1rem", filter: "grayscale(100%)" }}
+                      >
+                        🗺️
+                      </span>
+                    </span>
+                    <span style={{ fontSize: "0.9rem", color: "#555" }}>
+                      Zones
+                    </span>
+                  </summary>
+                  <div>
+                    <menu
+                      onClick={(e: React.MouseEvent<HTMLMenuElement>) =>
+                        setActiveZone((e.target as HTMLElement).innerText)
+                      }
+                    >
+                      {backgroundGeo.features.map((x) => (
+                        <li
+                          key={x.id}
+                          className={`${x.id === activeZone && "active"}`}
+                        >
+                          {x.id}
+                        </li>
+                      ))}
+                    </menu>
+                  </div>
+                </details>
+                <details name="alpha">
+                  <summary
+                    style={{
+                      gridColumn: "2 / span 1",
+                    }}
+                  >
+                    <span className="pill">
+                      <span
+                        style={{ fontSize: "1rem", filter: "grayscale(100%)" }}
+                      >
+                        ✨
+                      </span>
+                    </span>
+                    <span style={{ fontSize: "0.9rem", color: "#555" }}>
+                      Items
+                    </span>
+                  </summary>
+                  <div>
+                    <menu
+                      onClick={(e: React.MouseEvent<HTMLMenuElement>) =>
+                        setActivePickup((e.target as HTMLElement).innerText)
+                      }
+                    >
+                      {rawLandmarkGeo.features
+                        .filter((x) => x.properties.zone === activeZone)
+                        .map((x) => (
+                          <li
+                            key={x.properties.name}
+                            className={`${
+                              x.properties.name === activePickup && "active"
+                            }`}
+                          >
+                            {x.properties.name}
+                          </li>
+                        ))}
+                    </menu>
+                  </div>
+                </details>
+                <details
+                  name="alpha"
+                  open={
+                    activePickup ===
+                    rawLandmarkGeo.features.find(
+                      (x) => x.properties.name === activePickup
+                    )?.properties.name
+                  }
+                >
+                  <summary
+                    style={{
+                      gridColumn: "3 / span 1",
+                    }}
+                  >
+                    <span className="pill">
+                      <span
+                        style={{ fontSize: "1rem", filter: "grayscale(100%)" }}
+                      >
+                        📚
+                      </span>
+                    </span>
+                    <span style={{ fontSize: "0.9rem", color: "#555" }}>
+                      Details
+                    </span>
+                  </summary>
+                  <div>TODO: Implement this</div>
+                </details>
+              </div>
+            </Sheet.Content>
+          </Sheet.Container>
+        </Sheet>
+      </div>
+    </>
   );
 }
