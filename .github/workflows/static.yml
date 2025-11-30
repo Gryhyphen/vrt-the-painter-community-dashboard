@@ -40,6 +40,13 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
+      - name: Verify Built Assets
+        run: |
+          echo "Listing all contents of the final dist folder:"
+          ls -R ./dist
+          echo "---"
+          # Check for a specific asset file
+          find ./dist -name "*png"
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact

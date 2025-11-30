@@ -48,7 +48,7 @@ const CustomCRS = L.extend({}, L.CRS.Simple, {
 
 // --- Image data ---
 const mapImageModules = import.meta.glob(
-  "/src/assets/worlddata/mapimages/*.png",
+  "../../assets/worlddata/mapimages/*.png",
   { eager: true, query: "?url", import: "default" }
 );
 
@@ -90,7 +90,7 @@ const snapPoints = [0, 0.5, 1];
 
 // --- details data ---
 const detailsModules = import.meta.glob<string>(
-  "/src/assets/worlddata/details/*.md",
+  "../../assets/worlddata/details/*.md",
   { eager: true, query: "?raw", import: "default" }
 );
 
