@@ -1,6 +1,10 @@
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
-import { ImageOverlay, MapContainer, GeoJSON } from "react-leaflet";
+import {
+  ImageOverlay,
+  MapContainer,
+  GeoJSON,
+} from "react-leaflet";
 import createSparkleIcon from "./components/SparkleIcon";
 import backgroundGeo from "../../assets/worldData/mapimages/backgroundGeo.json";
 import type { FeatureCollection, Point } from "geojson";
@@ -133,7 +137,7 @@ export default function WorldMap(props: IProps) {
       <MapContainer
         ref={mapRef}
         crs={CustomCRS}
-        style={{ height: "80vh", width: "100%"}}
+        style={{ height: "80vh", width: "100%" }}
         center={[0, 0]}
         zoom={0}
         minZoom={-5}
@@ -192,7 +196,17 @@ export default function WorldMap(props: IProps) {
           }}
         />
       </MapContainer>
-      
+      <div style={{ textAlign: "right" }}>
+        World by{" "}
+        <a href="#" target="_blank">
+          PMONickpop123
+        </a>{" "}
+        | Maps created with Magic Compass by{" "}
+        <a href="#" target="_blank">
+          Melting3D
+        </a>
+      </div>
+
       <Sheet
         ref={sheetRef}
         isOpen={drawerOpen}
@@ -405,10 +419,7 @@ export default function WorldMap(props: IProps) {
                   </menu>
                 </div>
               </details>
-              <details
-                name="alpha"
-                ref={infoTabRef}
-              >
+              <details name="alpha" ref={infoTabRef}>
                 <summary
                   style={{
                     gridColumn: "3 / span 1",

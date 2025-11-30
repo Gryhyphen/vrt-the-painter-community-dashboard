@@ -69,7 +69,7 @@ function App() {
         <WorldMap
           style={{
             marginTop: -20,
-            paddingBottom: "0.5rem",
+            paddingBottom: "1.5rem",
             height: "90vh",
           }}
         />
