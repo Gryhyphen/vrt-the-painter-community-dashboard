@@ -4,10 +4,13 @@ import { ImageOverlay, MapContainer, GeoJSON } from "react-leaflet";
 import createSparkleIcon from "./components/SparkleIcon";
 import backgroundGeo from "../../assets/worldData/mapimages/backgroundGeo.json";
 import type { FeatureCollection, Point } from "geojson";
-import rawLandmarkGeo from "../../assets/worldData/landmarksGeo.json";
 import { useEffect, useRef, useState } from "react";
 import { Sheet, type SheetRef } from "react-modal-sheet";
 import { useTransform } from "motion/react";
+import Markdown from "react-markdown";
+import slugify from "@sindresorhus/slugify";
+import remarkGfm from "remark-gfm";
+import rawLandmarkGeo from "../../assets/worldData/landmarksGeo.json";
 const landmarkGeo = rawLandmarkGeo as FeatureCollection<Point>;
 
 interface IProps {
@@ -81,6 +84,12 @@ const POSITION_CLASSES = {
 
 const snapPoints = [0, 0.5, 1];
 
+// --- details data ---
+const detailsModules = import.meta.glob<string>(
+  "/src/assets/worlddata/details/*.md",
+  { eager: true, query: "?raw", import: "default" }
+);
+
 export default function WorldMap(props: IProps) {
   const mapRef = useRef<L.Map | null>(null);
   useEffect(() => {
@@ -89,14 +98,15 @@ export default function WorldMap(props: IProps) {
       if (!map) throw new Error("Map wasn't loaded!");
 
       map.zoomControl.setPosition("bottomright");
-    }, 0);
+    }, 1);
   }, []);
 
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const ref = useRef<SheetRef>(null);
+  const sheetRef = useRef<SheetRef>(null);
+  const infoTabRef = useRef<HTMLDetailsElement>(null);
   // Add padding bottom based on how far the sheet is from being fully open
   const paddingBottom = useTransform(() => {
-    return ref.current?.y.get() ?? 0;
+    return sheetRef.current?.y.get() ?? 0;
   });
   const [activeZone, setActiveZone] = useState("lahanVillage");
   useEffect(() => {
@@ -104,10 +114,18 @@ export default function WorldMap(props: IProps) {
       (x) => x.id === activeZone
     );
     if (!backgroundGeoElement) return;
-    mapRef.current?.fitBounds(getImageProps(backgroundGeoElement).bounds, { animate: true, duration: 1 });
-  });
+    mapRef.current?.fitBounds(getImageProps(backgroundGeoElement).bounds, {
+      animate: true,
+      duration: 1,
+    });
+  }, [activeZone]);
   // lil hack to make the first time someone clicks on an item, it brings up the menu
   const [activePickup, setActivePickup] = useState("none selected");
+
+  const hasDetails =
+    !!detailsModules[
+      `/src/assets/worlddata/details/${slugify(activePickup)}.md`
+    ];
 
   return (
     <>
@@ -167,13 +185,18 @@ export default function WorldMap(props: IProps) {
                   permanent: false,
                   direction: "top",
                 });
+                layer.on("click", () => {
+                  setActivePickup(feature.properties.name);
+                  setDrawerOpen(true);
+                  setTimeout(() => (infoTabRef.current!.open = true), 2);
+                });
               }
             }}
           />
         </MapContainer>
 
         <Sheet
-          ref={ref}
+          ref={sheetRef}
           isOpen={drawerOpen}
           onClose={() => setDrawerOpen(false)}
           snapPoints={snapPoints}
@@ -260,7 +283,7 @@ export default function WorldMap(props: IProps) {
                         z-index: 10;
                       }
 
-                      details[open] summary {
+                      details[open] > summary {
                         font-weight: bold;
 
                         .pill {
@@ -334,9 +357,40 @@ export default function WorldMap(props: IProps) {
                   </summary>
                   <div>
                     <menu
-                      onClick={(e: React.MouseEvent<HTMLMenuElement>) =>
-                        setActivePickup((e.target as HTMLElement).innerText)
-                      }
+                      onClick={(e: React.MouseEvent<HTMLMenuElement>) => {
+                        const name = (e.target as HTMLElement).innerText;
+                        setActivePickup(name);
+
+                        const map = mapRef.current;
+                        if (!map) return;
+
+                        // Close existing
+                        map.eachLayer((l) => {
+                          if (l.getTooltip && l.getTooltip()) {
+                            l.closeTooltip();
+                          }
+                        });
+                        // open current
+                        map.eachLayer((layer) => {
+                          if (layer instanceof L.Marker) {
+                            const feature = layer.feature;
+                            if (feature?.properties?.name === name) {
+                              layer.openTooltip();
+                            }
+                          }
+                        });
+                        const landmark = landmarkGeo.features.find(
+                          (x) => x?.properties?.name === name
+                        );
+
+                        if (!landmark) return;
+                        // GeoJSON coordinates are [lng, lat], so flip them
+                        const [lng, lat] = landmark.geometry.coordinates;
+                        map.flyTo([lat, lng], 3, {
+                          animate: true,
+                          duration: 1,
+                        });
+                      }}
                     >
                       {rawLandmarkGeo.features
                         .filter((x) => x.properties.zone === activeZone)
@@ -361,6 +415,7 @@ export default function WorldMap(props: IProps) {
                       (x) => x.properties.name === activePickup
                     )?.properties.name
                   }
+                  ref={infoTabRef}
                 >
                   <summary
                     style={{
@@ -378,7 +433,43 @@ export default function WorldMap(props: IProps) {
                       Details
                     </span>
                   </summary>
-                  <div>TODO: Implement this</div>
+                  <div>
+                    {hasDetails ? (
+                      <Markdown
+                        remarkPlugins={[remarkGfm]}
+                        components={{
+                          // Disabling because node is used to exclude it from props
+                          // eslint-disable-next-line @typescript-eslint/no-unused-vars
+                          img: ({ node, ...props }) => (
+                            <img
+                              {...props}
+                              style={{ maxWidth: "100%", height: "auto" }}
+                              loading="lazy"
+                            />
+                          ),
+                        }}
+                      >
+                        {
+                          detailsModules[
+                            `/src/assets/worlddata/details/${slugify(
+                              activePickup
+                            )}.md`
+                          ]
+                        }
+                      </Markdown>
+                    ) : (
+                      <div style={{ textAlign: "center" }}>
+                        <p>No details available for this item yet.</p>
+                        <a
+                          href="https://docs.google.com/spreadsheets/d/12VMjZh63YEKQ3GSN5Saf4jmJjQErpRrsmLdi1e1SLAY/edit?gid=660683806#gid=660683806"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Contribute a description or image
+                        </a>
+                      </div>
+                    )}
+                  </div>
                 </details>
               </div>
             </Sheet.Content>
