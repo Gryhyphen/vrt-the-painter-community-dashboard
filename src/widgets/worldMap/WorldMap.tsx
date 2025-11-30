@@ -82,7 +82,7 @@ const POSITION_CLASSES = {
   topright: "leaflet-top leaflet-right",
 };
 
-const snapPoints = [0, 0.2, 0.5, 1];
+const snapPoints = [0, 0.5, 1];
 
 // --- details data ---
 const detailsModules = import.meta.glob<string>(

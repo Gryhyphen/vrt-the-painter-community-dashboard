@@ -55,6 +55,17 @@ function App() {
         >
           <span style={{ marginRight: "0.25rem" }}>Hide/Show World Map</span>
         </summary>
+        <a
+          href="/vrt-the-painter-community-dashboard/tools/mapcontribute/index.html"
+          style={{
+            fontSize: "0.8rem",
+            color: "#28a745",
+            textDecoration: "underline",
+            fontWeight: 600,
+          }}
+        >
+          + Add location
+        </a>
         <WorldMap
           style={{
             marginTop: -20,
