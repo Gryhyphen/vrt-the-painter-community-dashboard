@@ -1,0 +1,117 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "dazil",
+      "properties": {
+        "name": "Dazil",
+        "region": "dazil",
+        "image": "DazilResized.png",
+        "placement": {
+          "x": -289.2,
+          "y": 129.1,
+          "width": 173.85,
+          "height": 97.79
+        }
+      },
+      "geometry": null
+    },
+    {
+      "type": "Feature",
+      "id": "lahanVillage",
+      "properties": {
+        "name": "Lahan Village",
+        "region": "lahan",
+        "image": "LahanVillageResized.png",
+        "placement": {
+          "x": -59.22,
+          "y": 74.95,
+          "width": 129.04,
+          "height": 134.53
+        }
+      },
+      "geometry": null
+    },
+    {
+      "type": "Feature",
+      "id": "bledavik",
+      "properties": {
+        "name": "Bledavik",
+        "region": "bledavik",
+        "image": "BledavikResized.png",
+        "placement": {
+          "x": -254.38,
+          "y": 305.26,
+          "width": 79.64,
+          "height": 125.01
+        }
+      },
+      "geometry": null
+    },
+    {
+      "type": "Feature",
+      "id": "bledavik_2",
+      "properties": {
+        "name": "Bledavik 2",
+        "region": "bledavik",
+        "image": "Bledavik2Resized.png",
+        "placement": {
+          "x": -417.13,
+          "y": -42.49,
+          "width": 86.76,
+          "height": 85.99
+        }
+      },
+      "geometry": null
+    },
+    {
+      "type": "Feature",
+      "id": "sandcavern",
+      "properties": {
+        "name": "Sand Cavern",
+        "region": "sandcavern",
+        "image": "SandCaven1Resized.png",
+        "placement": {
+          "x": -488.24,
+          "y": -398.77,
+          "width": 108.87,
+          "height": 154.46
+        }
+      },
+      "geometry": null
+    },
+    {
+      "type": "Feature",
+      "id": "nortune",
+      "properties": {
+        "name": "Nortune",
+        "region": "nortune",
+        "image": "Nortune1Resize.png",
+        "placement": {
+          "x": -629.75,
+          "y": 330.75,
+          "width": 122.33,
+          "height": 142.29
+        }
+      },
+      "geometry": null
+    },
+    {
+      "type": "Feature",
+      "id": "nortune_2",
+      "properties": {
+        "name": "Nortune 2",
+        "region": "nortune",
+        "image": "Noctune2Resize.png",
+        "placement": {
+          "x": -639.22,
+          "y": 112.25,
+          "width": 134,
+          "height": 174.93
+        }
+      },
+      "geometry": null
+    }
+  ]
+}

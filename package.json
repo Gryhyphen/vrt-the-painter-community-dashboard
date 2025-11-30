@@ -10,15 +10,22 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@sindresorhus/slugify": "^3.0.0",
     "d3": "^7.9.0",
     "inflection": "^3.0.2",
     "lunr": "^2.3.9",
+    "motion": "^12.23.24",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
-    "react-select": "^5.10.2"
+    "react-leaflet": "^5.0.0",
+    "react-markdown": "^10.1.0",
+    "react-modal-sheet": "^5.2.1",
+    "react-select": "^5.10.2",
+    "remark-gfm": "^4.0.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",
+    "@types/leaflet": "^1.9.21",
     "@types/lunr": "^2.3.7",
     "@types/node": "^24.6.0",
     "@types/react": "^19.1.16",

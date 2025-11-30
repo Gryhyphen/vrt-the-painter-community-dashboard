@@ -1,0 +1,50 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "zone": "bledavik",
+        "name": "Item: Ether Melons",
+        "category": "item"
+      },
+      "geometry": { "type": "Point", "coordinates": [-370.294, -219.805] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "zone": "bledavik_2",
+        "name": "Item: Expensive Miniature Mech Model",
+        "category": "item"
+      },
+      "geometry": { "type": "Point", "coordinates": [-9.772, -363.146] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "zone": "dazil",
+        "name": "Item: Spare Tire",
+        "category": "item"
+      },
+      "geometry": { "type": "Point", "coordinates": [-190.4, -202.04] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "zone": "lahanVillage",
+        "name": "Item: Lame Wedding Gift",
+        "category": "item"
+      },
+      "geometry": { "type": "Point", "coordinates": [-148.198, -27.983] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "zone": "sandcavern",
+        "name": "Pigment: Metalic Sands",
+        "category": "pigment"
+      },
+      "geometry": { "type": "Point", "coordinates": [303.845, -471.13] }
+    }
+  ]
+}
