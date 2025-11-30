@@ -15,7 +15,6 @@ const AVAILABLE_ZONES = Array.from(
   new Set(backgroundGeo.features.map((f) => f.id))
 ).sort();
 
-type LatLngBoundsExpression = [[number, number], [number, number]];
 
 interface GeoPointFeature {
   type: "Feature";
@@ -32,17 +31,20 @@ interface GeoPointFeature {
 
 const CustomCRS = L.extend({}, L.CRS.Simple, {
   projection: {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     project(latlng: any) {
       const X = latlng.lng,
         Y = latlng.lat;
       return new L.Point(Y, -X);
     },
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     unproject(point: any) {
       return new L.LatLng(point.x, -point.y);
     },
   },
 });
 
+// eslint-disable-next-line react-refresh/only-export-components
 function LocationFinder({
   setCoords,
 }: {
@@ -88,6 +90,7 @@ function getImageProps(item: (typeof backgroundGeo.features)[number]) {
   };
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 function App() {
   const [formState, setFormState] = useState({
     zone: AVAILABLE_ZONES[0] || "dazil",
@@ -141,23 +144,6 @@ function App() {
 
   const handleSetCoords = (z: number, x: number) => {
     setFormState((prev) => ({ ...prev, z, x }));
-  };
-
-  const downloadJson = () => {
-    if (!geoJsonPreview) return;
-    const dataStr =
-      "data:text/json;charset=utf-8," +
-      encodeURIComponent(JSON.stringify(geoJsonPreview, null, 2));
-    const filename = `${formState.name
-      .replace(/[^a-z0-9]/gi, "_")
-      .toLowerCase()}.json`;
-
-    const downloadAnchorNode = document.createElement("a");
-    downloadAnchorNode.setAttribute("href", dataStr);
-    downloadAnchorNode.setAttribute("download", filename);
-    document.body.appendChild(downloadAnchorNode);
-    downloadAnchorNode.click();
-    downloadAnchorNode.remove();
   };
 
   const copyToClipboard = () => {
