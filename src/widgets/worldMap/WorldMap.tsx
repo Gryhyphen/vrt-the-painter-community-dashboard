@@ -48,7 +48,7 @@ const CustomCRS = L.extend({}, L.CRS.Simple, {
 
 // --- Image data ---
 const mapImageModules = import.meta.glob(
-  "../../assets/worlddata/mapimages/*.png",
+  "../../assets/worldData/mapimages/*.png",
   { eager: true, query: "?url", import: "default" }
 );
 
