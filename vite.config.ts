@@ -6,6 +6,7 @@ import { resolve } from 'path';
 export default defineConfig({
   base: '/vrt-the-painter-community-dashboard/',
   plugins: [react()],
+  assetsInclude: ['**/*.md'],
   build: {
     rollupOptions: {
       input: {

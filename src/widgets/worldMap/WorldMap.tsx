@@ -1,10 +1,6 @@
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
-import {
-  ImageOverlay,
-  MapContainer,
-  GeoJSON,
-} from "react-leaflet";
+import { ImageOverlay, MapContainer, GeoJSON } from "react-leaflet";
 import createSparkleIcon from "./components/SparkleIcon";
 import backgroundGeo from "../../assets/worldData/mapimages/backgroundGeo.json";
 import type { FeatureCollection, Point } from "geojson";
@@ -95,9 +91,19 @@ const snapPoints = [0, 0.5, 1];
 
 // --- details data ---
 const detailsModules = import.meta.glob<string>(
-  "../../assets/worldData/details/*.md",
+  "/src/assets/worldData/details/*.md",
   { eager: true, query: "?raw", import: "default" }
 );
+
+const detailsLookup: Record<string, string> = {};
+for (const [path, content] of Object.entries(detailsModules)) {
+  const fileName = path.split("/").pop()!; // e.g. "foo.md"
+  detailsLookup[fileName] = content;
+}
+
+function getDetails(slug: string) {
+  return detailsLookup[`${slug}.md`];
+}
 
 export default function WorldMap(props: IProps) {
   const mapRef = useRef<L.Map | null>(null);
@@ -206,7 +212,7 @@ export default function WorldMap(props: IProps) {
         <a href="#" target="_blank">
           PMONickpop123
         </a>{" "}
-        | Maps created with Magic Compass by{" "}
+        | Map renders created with Magic Compass by{" "}
         <a href="#" target="_blank">
           Melting3D
         </a>
@@ -457,13 +463,7 @@ export default function WorldMap(props: IProps) {
                         ),
                       }}
                     >
-                      {
-                        detailsModules[
-                          `/src/assets/worldData/details/${slugify(
-                            activePickup
-                          )}.md`
-                        ]
-                      }
+                      {getDetails(slugify(activePickup))}
                     </Markdown>
                   ) : (
                     <div style={{ textAlign: "center" }}>
