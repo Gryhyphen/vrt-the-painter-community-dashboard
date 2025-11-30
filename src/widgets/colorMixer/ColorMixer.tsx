@@ -40,7 +40,7 @@ const currentComboKnowledge = allPossibleCombos.map(
 const pigmentOptions = allPossiblePigments.map((pigment) => ({
   value: pigment,
   label: pigment,
-}));
+})).sort((a, b) => a.label.localeCompare(b.label));
 
 // Combo search index
 const comboSearchIndex = lunr(function () {
