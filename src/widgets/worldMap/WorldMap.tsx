@@ -82,7 +82,7 @@ const POSITION_CLASSES = {
   topright: "leaflet-top leaflet-right",
 };
 
-const snapPoints = [0, 0.5, 1];
+const snapPoints = [0, 0.2, 0.5, 1];
 
 // --- details data ---
 const detailsModules = import.meta.glob<string>(
@@ -119,7 +119,6 @@ export default function WorldMap(props: IProps) {
       duration: 1,
     });
   }, [activeZone]);
-  // lil hack to make the first time someone clicks on an item, it brings up the menu
   const [activePickup, setActivePickup] = useState("none selected");
 
   const hasDetails =
@@ -128,354 +127,346 @@ export default function WorldMap(props: IProps) {
     ];
 
   return (
-    <>
-      <div style={{ ...props.style }}>
-        <MapContainer
-          ref={mapRef}
-          crs={CustomCRS}
-          style={{ height: "100%", width: "100%" }}
-          center={[0, 0]}
-          zoom={0}
-          minZoom={-5}
+    <div style={{ backgroundColor: "rgb(249, 249, 249)", ...props.style }}>
+      <h2>World Map</h2>
+
+      <MapContainer
+        ref={mapRef}
+        crs={CustomCRS}
+        style={{ height: "80vh", width: "100%"}}
+        center={[0, 0]}
+        zoom={0}
+        minZoom={-5}
+      >
+        <div
+          className={POSITION_CLASSES["topleft"]}
+          style={{ display: "flex" }}
         >
           <div
-            className={POSITION_CLASSES["topleft"]}
-            style={{ display: "flex" }}
+            className="leaflet-control leaflet-bar"
+            style={{ alignSelf: "center" }}
           >
-            <div
-              className="leaflet-control leaflet-bar"
-              style={{ alignSelf: "center" }}
+            <a
+              href="#"
+              role="button"
+              onClick={(e) => {
+                e.preventDefault();
+                setDrawerOpen((current) => !current);
+              }}
             >
-              <a
-                href="#"
-                role="button"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setDrawerOpen((current) => !current);
-                }}
-              >
-                <span aria-hidden="true">☰</span>
-              </a>
-            </div>
+              <span aria-hidden="true">☰</span>
+            </a>
           </div>
-          {backgroundGeo.features.map((img) => {
-            return (
-              <ImageOverlay
-                {...getImageProps(img)}
-                key={getImageProps(img).key}
-                opacity={1}
-                zIndex={10}
-              />
-            );
-          })}
-          <GeoJSON
-            data={landmarkGeo}
-            pointToLayer={(feature, latlng) =>
-              L.marker(latlng, {
-                icon: createSparkleIcon(
-                  feature.properties?.category === "item"
-                    ? "#9d00ff"
-                    : "#ffffff"
-                ),
-              })
+        </div>
+        {backgroundGeo.features.map((img) => {
+          return (
+            <ImageOverlay
+              {...getImageProps(img)}
+              key={getImageProps(img).key}
+              opacity={1}
+              zIndex={10}
+            />
+          );
+        })}
+        <GeoJSON
+          data={landmarkGeo}
+          pointToLayer={(feature, latlng) =>
+            L.marker(latlng, {
+              icon: createSparkleIcon(
+                feature.properties?.category === "item" ? "#9d00ff" : "#ffffff"
+              ),
+            })
+          }
+          onEachFeature={(feature, layer) => {
+            if (feature.properties?.name) {
+              layer.bindTooltip(feature.properties.name, {
+                permanent: false,
+                direction: "top",
+              });
+              layer.on("click", () => {
+                setActivePickup(feature.properties.name);
+                setDrawerOpen(true);
+                setTimeout(() => (infoTabRef.current!.open = true), 2);
+              });
             }
-            onEachFeature={(feature, layer) => {
-              if (feature.properties?.name) {
-                layer.bindTooltip(feature.properties.name, {
-                  permanent: false,
-                  direction: "top",
-                });
-                layer.on("click", () => {
-                  setActivePickup(feature.properties.name);
-                  setDrawerOpen(true);
-                  setTimeout(() => (infoTabRef.current!.open = true), 2);
-                });
-              }
-            }}
-          />
-        </MapContainer>
+          }}
+        />
+      </MapContainer>
+      
+      <Sheet
+        ref={sheetRef}
+        isOpen={drawerOpen}
+        onClose={() => setDrawerOpen(false)}
+        snapPoints={snapPoints}
+        initialSnap={1}
+      >
+        <Sheet.Container>
+          <Sheet.Header style={{ backgroundColor: "rgb(249, 249, 249)" }} />
+          <Sheet.Content
+            scrollStyle={{ paddingBottom }}
+            disableDrag
+            className="inspector"
+          >
+            <style>
+              {css`
+                .inspector {
+                  font-family: sans-serif;
 
-        <Sheet
-          ref={sheetRef}
-          isOpen={drawerOpen}
-          onClose={() => setDrawerOpen(false)}
-          snapPoints={snapPoints}
-          initialSnap={1}
-        >
-          <Sheet.Container>
-            <Sheet.Header style={{ backgroundColor: "rgb(249, 249, 249)" }} />
-            <Sheet.Content
-              scrollStyle={{ paddingBottom }}
-              disableDrag
-              className="inspector"
-            >
-              <style>
-                {css`
-                  .inspector {
-                    font-family: sans-serif;
+                  menu {
+                    margin: 0;
+                    padding: 0;
+                    list-style: none;
+                  }
 
-                    menu {
-                      margin: 0;
-                      padding: 0;
-                      list-style: none;
+                  li {
+                    padding: 12px 15px;
+                    border-bottom: 1px solid #2a2a2a;
+
+                    font-size: 14px;
+                    cursor: pointer;
+                    transition: all 0.2s;
+
+                    //   &:last-child {
+                    //     border-bottom: none;
+                    //   }
+
+                    &.active {
+                      border-left: 4px solid #9d00ff;
+                      background: #b2b2b2;
                     }
 
-                    li {
-                      padding: 12px 15px;
-                      border-bottom: 1px solid #2a2a2a;
-
-                      font-size: 14px;
-                      cursor: pointer;
-                      transition: all 0.2s;
-
-                      //   &:last-child {
-                      //     border-bottom: none;
-                      //   }
-
-                      &.active {
-                        border-left: 4px solid #9d00ff;
-                        background: #b2b2b2;
-                      }
-
-                      &:hover {
-                        background: #e0e0e0;
-                      }
-                    }
-
-                    .tabs {
-                      display: grid;
-                      grid-template-columns: repeat(3, 1fr);
-                      grid-template-rows: auto 1fr;
-
-                      details {
-                        display: grid;
-                        grid-column: 1 / -1;
-                        grid-row: 1 / span 2;
-                        grid-template-columns: subgrid;
-                        grid-template-rows: subgrid;
-
-                        &::details-content {
-                          grid-row: 2;
-                          grid-column: 1 / -1;
-                          padding: 1rem;
-                          z-index: 1;
-                        }
-                        &:not([open])::details-content {
-                          display: none;
-                        }
-                        &[open] > summary {
-                          pointer-events: none;
-                        }
-                      }
-
-                      summary {
-                        background-color: rgb(249, 249, 249);
-                        grid-column: var(--n) / span 1;
-                        grid-row: 1;
-                        display: grid;
-                        cursor: pointer;
-                        z-index: 1;
-                        grid-template-rows: auto auto;
-                        justify-items: center;
-                        align-items: center;
-                        position: sticky;
-                        top: 0;
-                        z-index: 10;
-                      }
-
-                      details[open] > summary {
-                        font-weight: bold;
-
-                        .pill {
-                          display: inline-flex;
-                          align-items: center;
-                          justify-content: center;
-                          background-color: rgba(157, 0, 255, 0.2);
-                          border-radius: 9999px;
-                          padding: 0.2rem 1.25rem;
-                          transition: padding 0.3s ease-in-out;
-                        }
-                      }
-                      .pill {
-                        padding: 0.2rem 0rem;
-                      }
+                    &:hover {
+                      background: #e0e0e0;
                     }
                   }
-                `}
-              </style>
-              <div className="tabs">
-                <details name="alpha" open>
-                  <summary
-                    style={{
-                      gridColumn: "1 / span 1",
+
+                  .tabs {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    grid-template-rows: auto 1fr;
+
+                    details {
+                      display: grid;
+                      grid-column: 1 / -1;
+                      grid-row: 1 / span 2;
+                      grid-template-columns: subgrid;
+                      grid-template-rows: subgrid;
+
+                      &::details-content {
+                        grid-row: 2;
+                        grid-column: 1 / -1;
+                        padding: 1rem;
+                        z-index: 1;
+                      }
+                      &:not([open])::details-content {
+                        display: none;
+                      }
+                      &[open] > summary {
+                        pointer-events: none;
+                      }
+                    }
+
+                    summary {
+                      background-color: rgb(249, 249, 249);
+                      grid-column: var(--n) / span 1;
+                      grid-row: 1;
+                      display: grid;
+                      cursor: pointer;
+                      z-index: 1;
+                      grid-template-rows: auto auto;
+                      justify-items: center;
+                      align-items: center;
+                      position: sticky;
+                      top: 0;
+                      z-index: 10;
+                    }
+
+                    details[open] > summary {
+                      font-weight: bold;
+
+                      .pill {
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        background-color: rgba(157, 0, 255, 0.2);
+                        border-radius: 9999px;
+                        padding: 0.2rem 1.25rem;
+                        transition: padding 0.3s ease-in-out;
+                      }
+                    }
+                    .pill {
+                      padding: 0.2rem 0rem;
+                    }
+                  }
+                }
+              `}
+            </style>
+            <div className="tabs">
+              <details name="alpha" open>
+                <summary
+                  style={{
+                    gridColumn: "1 / span 1",
+                  }}
+                >
+                  <span className="pill">
+                    <span
+                      style={{ fontSize: "1rem", filter: "grayscale(100%)" }}
+                    >
+                      🗺️
+                    </span>
+                  </span>
+                  <span style={{ fontSize: "0.9rem", color: "#555" }}>
+                    Zones
+                  </span>
+                </summary>
+                <div>
+                  <menu
+                    onClick={(e: React.MouseEvent<HTMLMenuElement>) =>
+                      setActiveZone((e.target as HTMLElement).innerText)
+                    }
+                  >
+                    {backgroundGeo.features.map((x) => (
+                      <li
+                        key={x.id}
+                        className={`${x.id === activeZone && "active"}`}
+                      >
+                        {x.id}
+                      </li>
+                    ))}
+                  </menu>
+                </div>
+              </details>
+              <details name="alpha">
+                <summary
+                  style={{
+                    gridColumn: "2 / span 1",
+                  }}
+                >
+                  <span className="pill">
+                    <span
+                      style={{ fontSize: "1rem", filter: "grayscale(100%)" }}
+                    >
+                      ✨
+                    </span>
+                  </span>
+                  <span style={{ fontSize: "0.9rem", color: "#555" }}>
+                    Items
+                  </span>
+                </summary>
+                <div>
+                  <menu
+                    onClick={(e: React.MouseEvent<HTMLMenuElement>) => {
+                      const name = (e.target as HTMLElement).innerText;
+                      setActivePickup(name);
+
+                      const map = mapRef.current;
+                      if (!map) return;
+
+                      // Close existing
+                      map.eachLayer((l) => {
+                        if (l.getTooltip && l.getTooltip()) {
+                          l.closeTooltip();
+                        }
+                      });
+                      // open current
+                      map.eachLayer((layer) => {
+                        if (layer instanceof L.Marker) {
+                          const feature = layer.feature;
+                          if (feature?.properties?.name === name) {
+                            layer.openTooltip();
+                          }
+                        }
+                      });
+                      const landmark = landmarkGeo.features.find(
+                        (x) => x?.properties?.name === name
+                      );
+
+                      if (!landmark) return;
+                      // GeoJSON coordinates are [lng, lat], so flip them
+                      const [lng, lat] = landmark.geometry.coordinates;
+                      map.flyTo([lat, lng], 3, {
+                        animate: true,
+                        duration: 1,
+                      });
                     }}
                   >
-                    <span className="pill">
-                      <span
-                        style={{ fontSize: "1rem", filter: "grayscale(100%)" }}
-                      >
-                        🗺️
-                      </span>
-                    </span>
-                    <span style={{ fontSize: "0.9rem", color: "#555" }}>
-                      Zones
-                    </span>
-                  </summary>
-                  <div>
-                    <menu
-                      onClick={(e: React.MouseEvent<HTMLMenuElement>) =>
-                        setActiveZone((e.target as HTMLElement).innerText)
-                      }
-                    >
-                      {backgroundGeo.features.map((x) => (
+                    {rawLandmarkGeo.features
+                      .filter((x) => x.properties.zone === activeZone)
+                      .map((x) => (
                         <li
-                          key={x.id}
-                          className={`${x.id === activeZone && "active"}`}
+                          key={x.properties.name}
+                          className={`${
+                            x.properties.name === activePickup && "active"
+                          }`}
                         >
-                          {x.id}
+                          {x.properties.name}
                         </li>
                       ))}
-                    </menu>
-                  </div>
-                </details>
-                <details name="alpha">
-                  <summary
-                    style={{
-                      gridColumn: "2 / span 1",
-                    }}
-                  >
-                    <span className="pill">
-                      <span
-                        style={{ fontSize: "1rem", filter: "grayscale(100%)" }}
-                      >
-                        ✨
-                      </span>
+                  </menu>
+                </div>
+              </details>
+              <details
+                name="alpha"
+                ref={infoTabRef}
+              >
+                <summary
+                  style={{
+                    gridColumn: "3 / span 1",
+                  }}
+                >
+                  <span className="pill">
+                    <span
+                      style={{ fontSize: "1rem", filter: "grayscale(100%)" }}
+                    >
+                      📚
                     </span>
-                    <span style={{ fontSize: "0.9rem", color: "#555" }}>
-                      Items
-                    </span>
-                  </summary>
-                  <div>
-                    <menu
-                      onClick={(e: React.MouseEvent<HTMLMenuElement>) => {
-                        const name = (e.target as HTMLElement).innerText;
-                        setActivePickup(name);
-
-                        const map = mapRef.current;
-                        if (!map) return;
-
-                        // Close existing
-                        map.eachLayer((l) => {
-                          if (l.getTooltip && l.getTooltip()) {
-                            l.closeTooltip();
-                          }
-                        });
-                        // open current
-                        map.eachLayer((layer) => {
-                          if (layer instanceof L.Marker) {
-                            const feature = layer.feature;
-                            if (feature?.properties?.name === name) {
-                              layer.openTooltip();
-                            }
-                          }
-                        });
-                        const landmark = landmarkGeo.features.find(
-                          (x) => x?.properties?.name === name
-                        );
-
-                        if (!landmark) return;
-                        // GeoJSON coordinates are [lng, lat], so flip them
-                        const [lng, lat] = landmark.geometry.coordinates;
-                        map.flyTo([lat, lng], 3, {
-                          animate: true,
-                          duration: 1,
-                        });
+                  </span>
+                  <span style={{ fontSize: "0.9rem", color: "#555" }}>
+                    Details
+                  </span>
+                </summary>
+                <div>
+                  {hasDetails ? (
+                    <Markdown
+                      remarkPlugins={[remarkGfm]}
+                      components={{
+                        // Disabling because node is used to exclude it from props
+                        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+                        img: ({ node, ...props }) => (
+                          <img
+                            {...props}
+                            style={{ maxWidth: "100%", height: "auto" }}
+                            loading="lazy"
+                          />
+                        ),
                       }}
                     >
-                      {rawLandmarkGeo.features
-                        .filter((x) => x.properties.zone === activeZone)
-                        .map((x) => (
-                          <li
-                            key={x.properties.name}
-                            className={`${
-                              x.properties.name === activePickup && "active"
-                            }`}
-                          >
-                            {x.properties.name}
-                          </li>
-                        ))}
-                    </menu>
-                  </div>
-                </details>
-                <details
-                  name="alpha"
-                  open={
-                    activePickup ===
-                    rawLandmarkGeo.features.find(
-                      (x) => x.properties.name === activePickup
-                    )?.properties.name
-                  }
-                  ref={infoTabRef}
-                >
-                  <summary
-                    style={{
-                      gridColumn: "3 / span 1",
-                    }}
-                  >
-                    <span className="pill">
-                      <span
-                        style={{ fontSize: "1rem", filter: "grayscale(100%)" }}
+                      {
+                        detailsModules[
+                          `/src/assets/worlddata/details/${slugify(
+                            activePickup
+                          )}.md`
+                        ]
+                      }
+                    </Markdown>
+                  ) : (
+                    <div style={{ textAlign: "center" }}>
+                      <p>No details available for this item yet.</p>
+                      <a
+                        href="https://docs.google.com/spreadsheets/d/12VMjZh63YEKQ3GSN5Saf4jmJjQErpRrsmLdi1e1SLAY/edit?gid=660683806#gid=660683806"
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
-                        📚
-                      </span>
-                    </span>
-                    <span style={{ fontSize: "0.9rem", color: "#555" }}>
-                      Details
-                    </span>
-                  </summary>
-                  <div>
-                    {hasDetails ? (
-                      <Markdown
-                        remarkPlugins={[remarkGfm]}
-                        components={{
-                          // Disabling because node is used to exclude it from props
-                          // eslint-disable-next-line @typescript-eslint/no-unused-vars
-                          img: ({ node, ...props }) => (
-                            <img
-                              {...props}
-                              style={{ maxWidth: "100%", height: "auto" }}
-                              loading="lazy"
-                            />
-                          ),
-                        }}
-                      >
-                        {
-                          detailsModules[
-                            `/src/assets/worlddata/details/${slugify(
-                              activePickup
-                            )}.md`
-                          ]
-                        }
-                      </Markdown>
-                    ) : (
-                      <div style={{ textAlign: "center" }}>
-                        <p>No details available for this item yet.</p>
-                        <a
-                          href="https://docs.google.com/spreadsheets/d/12VMjZh63YEKQ3GSN5Saf4jmJjQErpRrsmLdi1e1SLAY/edit?gid=660683806#gid=660683806"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Contribute a description or image
-                        </a>
-                      </div>
-                    )}
-                  </div>
-                </details>
-              </div>
-            </Sheet.Content>
-          </Sheet.Container>
-        </Sheet>
-      </div>
-    </>
+                        Contribute a description or image
+                      </a>
+                    </div>
+                  )}
+                </div>
+              </details>
+            </div>
+          </Sheet.Content>
+        </Sheet.Container>
+      </Sheet>
+    </div>
   );
 }

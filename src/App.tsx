@@ -9,8 +9,8 @@ function App() {
     <div style={{ fontFamily: "sans-serif" }}>
       <h1>VRT: The Painter 1 Revised - Community Dashboard</h1>
       <div style={{ fontSize: "0.85rem", color: "#555", marginBottom: "1rem" }}>
-        <strong>Version:</strong> 2025.10.29 — Data last refreshed on October 29,
-        2025
+        <strong>Version:</strong> 2025.11.30 — Data last refreshed on October
+        29, 2025
       </div>
 
       <div>
@@ -36,8 +36,35 @@ function App() {
           discoveries to the spreadsheet. Every entry helps!
         </p>
       </div>
-      <ColorMixer />
-      <WorldMap style={{marginTop: 20, height: "80vh"}} />
+
+      <details
+        open
+        style={{
+          backgroundColor: "rgb(249, 249, 249)",
+          marginTop: "0.5rem",
+          paddingTop: 20,
+        }}
+      >
+        <summary
+          style={{
+            cursor: "pointer",
+            color: "#007BFF",
+            fontWeight: 500,
+            paddingBottom: "0.5rem",
+          }}
+        >
+          <span style={{ marginRight: "0.25rem" }}>Hide/Show World Map</span>
+        </summary>
+        <WorldMap
+          style={{
+            marginTop: -20,
+            paddingBottom: "0.5rem",
+            height: "90vh",
+          }}
+        />
+      </details>
+
+      <ColorMixer style={{ marginTop: 20 }} />
       <div
         style={{
           marginTop: 20,

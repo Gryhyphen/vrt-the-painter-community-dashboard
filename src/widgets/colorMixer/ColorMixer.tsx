@@ -57,7 +57,11 @@ const comboSearchIndex = lunr(function () {
   });
 });
 
-export default function ColorMixer() {
+interface IColorMixerProps {
+  style?: React.CSSProperties;
+}
+
+export default function ColorMixer(props: IColorMixerProps) {
   const [selectedPigment, setSelectedPigment] = useState<string>("");
   const [searchTerm, setSearchTerm] = useState<string>("");
 
@@ -115,6 +119,7 @@ export default function ColorMixer() {
         padding: "0.5rem",
         borderRadius: "8px",
         backgroundColor: "#f9f9f9",
+        ...props.style
       }}
     >
       <h2>Color Mixer</h2>
