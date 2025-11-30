@@ -1,7 +1,7 @@
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import {
-  //ImageOverlay,
+  ImageOverlay,
   MapContainer,
   GeoJSON,
 } from "react-leaflet";
@@ -48,14 +48,19 @@ const CustomCRS = L.extend({}, L.CRS.Simple, {
 
 // --- Image data ---
 const mapImageModules = import.meta.glob(
-  "../../assets/worldData/mapimages/*.png",
+  "/src/assets/worldData/mapimages/*.png",
   { eager: true, query: "?url", import: "default" }
 );
+// Build a lookup keyed by basename
+const imageLookup: Record<string, string> = {};
+for (const [path, url] of Object.entries(mapImageModules)) {
+  const fileName = path.split("/").pop()!;
+  imageLookup[fileName] = url as string;
+}
 
 function getImageProps(item: (typeof backgroundGeo.features)[number]) {
   function getImageUrl(fileName: string) {
-    const fullPath = `/src/assets/worlddata/mapimages/${fileName}`;
-    return mapImageModules[fullPath] as string;
+    return imageLookup[fileName];
   }
 
   function getImageBounds(p: {
@@ -90,7 +95,7 @@ const snapPoints = [0, 0.5, 1];
 
 // --- details data ---
 const detailsModules = import.meta.glob<string>(
-  "../../assets/worlddata/details/*.md",
+  "../../assets/worldData/details/*.md",
   { eager: true, query: "?raw", import: "default" }
 );
 
@@ -127,7 +132,7 @@ export default function WorldMap(props: IProps) {
 
   const hasDetails =
     !!detailsModules[
-      `/src/assets/worlddata/details/${slugify(activePickup)}.md`
+      `/src/assets/worldData/details/${slugify(activePickup)}.md`
     ];
 
   return (
@@ -162,7 +167,7 @@ export default function WorldMap(props: IProps) {
             </a>
           </div>
         </div>
-        {/* {backgroundGeo.features.map((img) => {
+        {backgroundGeo.features.map((img) => {
           return (
             <ImageOverlay
               {...getImageProps(img)}
@@ -171,7 +176,7 @@ export default function WorldMap(props: IProps) {
               zIndex={10}
             />
           );
-        })} */}
+        })}
         <GeoJSON
           data={landmarkGeo}
           pointToLayer={(feature, latlng) =>
@@ -454,7 +459,7 @@ export default function WorldMap(props: IProps) {
                     >
                       {
                         detailsModules[
-                          `/src/assets/worlddata/details/${slugify(
+                          `/src/assets/worldData/details/${slugify(
                             activePickup
                           )}.md`
                         ]

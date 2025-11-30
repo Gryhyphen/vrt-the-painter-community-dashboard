@@ -61,14 +61,20 @@ function LocationFinder({
 }
 
 const mapImageModules = import.meta.glob(
-  "/src/assets/worlddata/mapimages/*.png",
+  "/src/assets/worldData/mapimages/*.png",
   { eager: true, query: "?url", import: "default" }
 );
 
+// Build a lookup keyed by basename
+const imageLookup: Record<string, string> = {};
+for (const [path, url] of Object.entries(mapImageModules)) {
+  const fileName = path.split("/").pop()!;
+  imageLookup[fileName] = url as string;
+}
+
 function getImageProps(item: (typeof backgroundGeo.features)[number]) {
   function getImageUrl(fileName: string) {
-    const fullPath = `/src/assets/worlddata/mapimages/${fileName}`;
-    return mapImageModules[fullPath] as string;
+    return imageLookup[fileName];
   }
 
   function getImageBounds(p: {
