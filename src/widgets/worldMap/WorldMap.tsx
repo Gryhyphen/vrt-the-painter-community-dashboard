@@ -162,7 +162,7 @@ export default function WorldMap(props: IProps) {
             </a>
           </div>
         </div>
-        {backgroundGeo.features.map((img) => {
+        {/* {backgroundGeo.features.map((img) => {
           return (
             <ImageOverlay
               {...getImageProps(img)}
@@ -171,7 +171,7 @@ export default function WorldMap(props: IProps) {
               zIndex={10}
             />
           );
-        })}
+        })} */}
         <GeoJSON
           data={landmarkGeo}
           pointToLayer={(feature, latlng) =>
