@@ -3,7 +3,7 @@
     "datePainted": "2025-10-25",
     "firstResultDiscovery": false,
     "painter": "Gry-",
-    "pigment1": "Phylox Paroxysm",
+    "pigment1": "Phloyx Paroxysm",
     "pigment2": "Gilded Bronze",
     "result": "Abstract Mess"
   },
@@ -62,6 +62,126 @@
     "pigment1": "Ecru Winnower",
     "pigment2": "Drunkard\u0027s Pillow",
     "result": "Scene: Soup Kitchen"
+  },
+  {
+    "datePainted": "2025-11-22",
+    "firstResultDiscovery": false,
+    "painter": "Polaris_Exists",
+    "pigment1": "Warm Sienna",
+    "pigment2": "Gilded Bronze",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2025-11-22",
+    "firstResultDiscovery": false,
+    "painter": "Angel",
+    "pigment1": "Caput Mortuum",
+    "pigment2": "Rotting Pearl",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2025-11-22",
+    "firstResultDiscovery": false,
+    "painter": "Luminus 9-4",
+    "pigment1": "Drunkard\u0027s Pillow",
+    "pigment2": "Ancient Argent",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2025-11-22",
+    "firstResultDiscovery": true,
+    "painter": "Diarmuid",
+    "pigment1": "Amaranthine Psychopomp",
+    "pigment2": "Corrupted Vermillion",
+    "result": "Subject: Demon"
+  },
+  {
+    "datePainted": "2025-11-22",
+    "firstResultDiscovery": false,
+    "painter": "Phyron",
+    "pigment1": "Orpiment Tabby",
+    "pigment2": "Cornsilk Strand",
+    "result": "Scene: Soup Kitchen"
+  },
+  {
+    "datePainted": "2025-11-22",
+    "firstResultDiscovery": false,
+    "painter": "Gry-",
+    "pigment1": "Orpiment Tabby",
+    "pigment2": "Drunkard\u0027s Pillow",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2025-11-22",
+    "firstResultDiscovery": false,
+    "painter": "redfireyoshi",
+    "pigment1": "Lusty Gallan",
+    "pigment2": "Ashen Char",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2025-11-22",
+    "firstResultDiscovery": false,
+    "painter": "redfireyoshi",
+    "pigment1": "Phloyx Paroxysm",
+    "pigment2": "Orpiment Tabby",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2025-11-22",
+    "firstResultDiscovery": false,
+    "painter": "Xared",
+    "pigment1": "Cornsilk Strand",
+    "pigment2": "Bianco di San Giovanni",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2025-11-22",
+    "firstResultDiscovery": false,
+    "painter": "Xared",
+    "pigment1": "Celestial Obsidian",
+    "pigment2": "Warm Sienna",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2025-11-22",
+    "firstResultDiscovery": false,
+    "painter": "Angel",
+    "pigment1": "Phloyx Paroxysm",
+    "pigment2": "Aureolin Virulence ",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2025-11-22",
+    "firstResultDiscovery": false,
+    "painter": "Luminus 9-4",
+    "pigment1": "Smaragdine Sea",
+    "pigment2": "Cornsilk Strand",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2025-11-22",
+    "firstResultDiscovery": false,
+    "painter": "Gry-",
+    "pigment1": "Xanadu",
+    "pigment2": "Albescent Iridescence",
+    "result": "Subject: Tree Of Time"
+  },
+  {
+    "datePainted": "2025-11-22",
+    "firstResultDiscovery": false,
+    "painter": "~kitty",
+    "pigment1": "Infinite Amethyst",
+    "pigment2": "Rotting Pearl",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2025-11-22",
+    "firstResultDiscovery": false,
+    "painter": "~kitty",
+    "pigment1": "Gormenghast Moss",
+    "pigment2": "Aureolin Virulence ",
+    "result": "Abstract Mess"
   },
   {
     "datePainted": "2025-08-30",
@@ -502,5 +622,45 @@
     "pigment1": "Orpiment Tabby",
     "pigment2": "Ten Thousand Emeralds",
     "result": "Subject: Corroding Scrap "
+  },
+  {
+    "datePainted": "2025-11-22",
+    "firstResultDiscovery": false,
+    "painter": null,
+    "pigment1": "Ashen Char",
+    "pigment2": "Rotting Pearl",
+    "result": "Scene: Mindscape"
+  },
+  {
+    "datePainted": "2025-11-22",
+    "firstResultDiscovery": false,
+    "painter": null,
+    "pigment1": "Ecru Winnower",
+    "pigment2": "Phloyx Paroxysm",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2025-11-22",
+    "firstResultDiscovery": false,
+    "painter": null,
+    "pigment1": "Han Purple",
+    "pigment2": "Ten Thousand Emeralds",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2025-11-22",
+    "firstResultDiscovery": false,
+    "painter": null,
+    "pigment1": "Phloyx Paroxysm",
+    "pigment2": "Sinoper Shroud",
+    "result": "Subject: A Heart Held Close"
+  },
+  {
+    "datePainted": "2025-11-22",
+    "firstResultDiscovery": false,
+    "painter": null,
+    "pigment1": "Plumbeous Cinder",
+    "pigment2": "True Eigengrau",
+    "result": "Abstract Mess"
   }
 ]
