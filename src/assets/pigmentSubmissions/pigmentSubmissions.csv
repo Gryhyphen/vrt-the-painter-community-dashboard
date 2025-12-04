@@ -1,10 +1,25 @@
-datePainted,pigment1,pigment2,result,painter,Added?,
-10/25/2025,Phylox Paroxysm,Gilded Bronze,Abstract Mess,Gry-,FALSE,*This is for an upcoming pigment history section Im working on
-10/25/2025,Metallic Sands,Sinoper Shroud,Abstract Mess,Gry-,FALSE,
-10/25/2025,Bianco di San Giovanni,Ethereal Mist,Abstract Mess,Luminus 9-4,FALSE,
-10/25/2025,Cubic Periwinkle,Orpiment Tabby,Subject: Crowd of Travellers,Diarmuid,FALSE,
-10/25/2025,Cornsilk Strand,Cerulean-ish Ultramarine,Abstract Mess,Diarmuid,FALSE,
-10/25/2025,Orpiment Tabby,Nattier,Abstract Mess,Luminus 9-4,FALSE,
-10/25/2025,Cornsilk Strand,Sky Captain's Spruce,Subject: University-bound Students,~kitty,FALSE,
-10/25/2025,Ecru Winnower,Drunkard's Pillow,Scene: Soup Kitchen,~kitty,FALSE,
-,,,,,FALSE,
+datePainted,pigment1,pigment2,result,painter
+10/25/2025,Phloyx Paroxysm,Gilded Bronze,Abstract Mess,Gry-
+10/25/2025,Metallic Sands,Sinoper Shroud,Abstract Mess,Gry-
+10/25/2025,Bianco di San Giovanni,Ethereal Mist,Abstract Mess,Luminus 9-4
+10/25/2025,Cubic Periwinkle,Orpiment Tabby,Subject: Crowd of Travellers,Diarmuid
+10/25/2025,Cornsilk Strand,Cerulean-ish Ultramarine,Abstract Mess,Diarmuid
+10/25/2025,Orpiment Tabby,Nattier,Abstract Mess,Luminus 9-4
+10/25/2025,Cornsilk Strand,Sky Captain's Spruce,Subject: University-bound Students,~kitty
+10/25/2025,Ecru Winnower,Drunkard's Pillow,Scene: Soup Kitchen,~kitty
+11/22/2025,Warm Sienna,Gilded Bronze,Abstract Mess,Polaris_Exists
+11/22/2025,Caput Mortuum,Rotting Pearl,Abstract Mess,Angel
+11/22/2025,Drunkard's Pillow,Ancient Argent,Abstract Mess,Luminus 9-4
+11/22/2025,Amaranthine Psychopomp,Corrupted Vermillion,SUBJECT: DEMON,Diarmuid
+11/22/2025,Orpiment Tabby,Cornsilk Strand,Scene: Soup Kitchen,Phyron
+11/22/2025,Orpiment Tabby,Drunkard's Pillow,Abstract Mess,Gry-
+11/22/2025,Lusty Gallan,Ashen Char,Abstract Mess,redfireyoshi
+11/22/2025,Phloyx Paroxysm,Orpiment Tabby,Abstract Mess,redfireyoshi
+11/22/2025,Cornsilk Strand,Bianco di San Giovanni,Abstract Mess,Xared
+11/22/2025,Celestial Obsidian,Warm Sienna,Abstract Mess,Xared
+11/22/2025,Phloyx Paroxysm,Aureolin Virulence ,Abstract Mess,Angel
+11/22/2025,Smaragdine Sea,Cornsilk Strand,Abstract Mess,Luminus 9-4
+11/22/2025,Xanadu,Albescent Iridescence,Subject: Tree of time,Gry-
+11/22/2025,Infinite Amethyst,Rotting Pearl,Abstract Mess,~kitty
+11/22/2025,Gormenghast Moss,Aureolin Virulence ,Abstract Mess,~kitty
+11/22/2025,Orpiment Tabby,Drunkard's Pillow,Abstract Mess,Gry-
