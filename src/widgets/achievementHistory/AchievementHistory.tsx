@@ -28,6 +28,7 @@ const emojiForResult = (result: string): string => {
   if (normalized.includes("corroding scrap")) return "🛠️";
   if (normalized.includes("crowd of travellers")) return "👨‍👩‍👧‍👦";
   if (normalized.includes("university-bound students")) return "🎓";
+  if (normalized.includes("demon")) return "👹";
   return "✨";
 };
 
