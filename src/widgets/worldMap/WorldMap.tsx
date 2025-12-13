@@ -211,6 +211,7 @@ export default function WorldMap(props: IProps) {
 
               layer.on("click", () => {
                 setActivePickup(feature.properties.name);
+                setActiveZone(feature.properties?.zone);
                 setDrawerOpen(true);
                 setTimeout(() => (infoTabRef.current!.open = true), 2);
               });
