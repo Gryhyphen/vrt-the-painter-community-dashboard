@@ -193,11 +193,22 @@ export default function WorldMap(props: IProps) {
             })
           }
           onEachFeature={(feature, layer) => {
-            if (feature.properties?.name) {
-              layer.bindTooltip(feature.properties.name, {
+            if (feature.properties?.name && feature.geometry.type === "Point" && feature.geometry?.coordinates) {
+              const [x, z] = feature.geometry.coordinates;
+
+              // Tooltip content: name + coordinates
+              const tooltipContent = `
+                <div>
+                  <strong>${feature.properties.name}</strong><br/>
+                  x: ${x}, z: ${z}
+                </div>
+              `;
+
+              layer.bindTooltip(tooltipContent, {
                 permanent: false,
                 direction: "top",
               });
+
               layer.on("click", () => {
                 setActivePickup(feature.properties.name);
                 setDrawerOpen(true);
