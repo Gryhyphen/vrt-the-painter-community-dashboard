@@ -45,6 +45,24 @@
         "category": "pigment"
       },
       "geometry": { "type": "Point", "coordinates": [303.845, -471.13] }
-    }
+    },
+    {"type":"Feature","properties":{"zone":"lahanVillage","name":"Pigment: True Eigengrau","category":"pigment"},"geometry":{"type":"Point","coordinates":[-169.063,19.715]}},
+{"type":"Feature","properties":{"zone":"lahanVillage","name":"Pigment: Warm Sienna","category":"pigment"},"geometry":{"type":"Point","coordinates":[-145.065,20.487]}},
+{"type":"Feature","properties":{"zone":"dazil","name":"Pigment: Phlox Paroxysm","category":"pigment"},"geometry":{"type":"Point","coordinates":[-178.091,-238.661]}},
+{"type":"Feature","properties":{"zone":"dazil","name":"Pigment: Cubic Periwinkle","category":"pigment"},"geometry":{"type":"Point","coordinates":[-192.965,-221.754]}},
+{"type":"Feature","properties":{"zone":"dazil","name":"Pigment: Drunkard's Pillow","category":"pigment"},"geometry":{"type":"Point","coordinates":[-191.965,-206.1]}},
+{"type":"Feature","properties":{"zone":"dazil","name":"Pigment: Ten Thousand Emeralds","category":"pigment"},"geometry":{"type":"Point","coordinates":[-196.935,-181.786]}},
+{"type":"Feature","properties":{"zone":"dazil","name":"Pigment: Horizon Bound","category":"pigment"},"geometry":{"type":"Point","coordinates":[-193.964,-191.689]}},
+{"type":"Feature","properties":{"zone":"dazil","name":"Pigment: Rotting Pearl","category":"pigment"},"geometry":{"type":"Point","coordinates":[-174.964,-219]}},
+{"type":"Feature","properties":{"zone":"bledavik_2","name":"Pigment: Cornsilk Strand","category":"pigment"},"geometry":{"type":"Point","coordinates":[10.831,-388.381]}},
+{"type":"Feature","properties":{"zone":"bledavik","name":"Pigment: Gilded Bronze","category":"pigment"},"geometry":{"type":"Point","coordinates":[-362.827,-202.321]}},
+{"type":"Feature","properties":{"zone":"bledavik","name":"Pigment: Albescent Iridescence","category":"pigment"},"geometry":{"type":"Point","coordinates":[-383.412,-232.285]}},
+{"type":"Feature","properties":{"zone":"bledavik","name":"Pigment: Nattier","category":"pigment"},"geometry":{"type":"Point","coordinates":[-343.85,-239.191]}},
+{"type":"Feature","properties":{"zone":"bledavik","name":"Pigment: Old Guard Vogue Puce","category":"pigment"},"geometry":{"type":"Point","coordinates":[-355.75,-191.655]}},
+{"type":"Feature","properties":{"zone":"bledavik","name":"Pigment: Ashen Char","category":"pigment"},"geometry":{"type":"Point","coordinates":[-371.094,-192.247]}},
+{"type":"Feature","properties":{"zone":"nortune_2","name":"Pigment: Cerulean-ish Ultramarine","category":"pigment"},"geometry":{"type":"Point","coordinates":[-227.813,-569.904]}},
+{"type":"Feature","properties":{"zone":"nortune","name":"Pigment: Xanadu","category":"pigment"},"geometry":{"type":"Point","coordinates":[-423.094,-592.153]}},
+{"type":"Feature","properties":{"zone":"nortune","name":"Pigment: Amaranthine Psychopomp","category":"pigment"},"geometry":{"type":"Point","coordinates":[-393,-555.872]}}
+
   ]
 }
