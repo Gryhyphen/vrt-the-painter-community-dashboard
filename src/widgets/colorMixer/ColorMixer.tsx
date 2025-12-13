@@ -2,6 +2,7 @@ import Select from "react-select";
 import PigmentData from "../../assets/pigmentCombos/data/enriched/enrichedPigments.json";
 import { useMemo, useState } from "react";
 import lunr from "lunr";
+import LandmarkData from "../../assets/worldData/landmarksGeo.json";
 
 const symmetricalKnownCombos = PigmentData.flatMap((x) => [
   x,
@@ -16,8 +17,45 @@ const allPossibleCombos = allPossiblePigments.flatMap((p1) =>
     .filter((p2) => p2 !== p1)
     .map((p2) => ({ pigment1: p1, pigment2: p2 }))
 );
-const currentComboKnowledge = allPossibleCombos.map(
-  ({ pigment1, pigment2 }) => {
+
+/**
+ * Dirty hack to calculate region compatibility. Should be moved to enrichment in the pipeline at some point.
+ * @param pigment1
+ * @param pigment2
+ * @returns
+ */
+function CalculateRegionCompatibility(pigment1: string, pigment2: string) {
+  // Dirty hack, reusing the landmark datasource because if I had to use the raw pigment data
+  // then I would need to backdate, map and cleanup the zone ids.
+  // TODO: Enrich pigment data with zones from world data, rather then calculating on the fly.
+  const pigment1Landmark = LandmarkData.features.find((x) =>
+    x.properties.name.match(new RegExp(pigment1, "i"))
+  );
+  const pigment2Landmark = LandmarkData.features.find((x) =>
+    x.properties.name.match(new RegExp(pigment2, "i"))
+  );
+  if (!(pigment1Landmark && pigment2Landmark)) return true; // We don't know so assume true
+
+  const zone1 = pigment1Landmark.properties.zone;
+  const zone2 = pigment2Landmark.properties.zone;
+  // Can't mix pigments in the same region.
+  // TODO: Zones != Regions
+  // Would need to bring in the backgroundGeo to calculate the regions.
+  return zone1 !== zone2;
+}
+
+const currentComboKnowledge = allPossibleCombos
+  .map(({ pigment1, pigment2 }) => {
+    const compatible = CalculateRegionCompatibility(pigment1, pigment2);
+    if (!compatible) {
+      return {
+        pigment1,
+        pigment2,
+        result: "Impossible",
+        tried: false,
+      };
+    }
+
     const known = symmetricalKnownCombos.find(
       (combo) => combo.pigment1 === pigment1 && combo.pigment2 === pigment2
     );
@@ -28,24 +66,28 @@ const currentComboKnowledge = allPossibleCombos.map(
       result: known?.result || "Unknown",
       tried: !!known?.result,
     };
-  }
-).sort((a, b) => {
-        if (a.tried === b.tried) {
-          return a.pigment2.localeCompare(b.pigment2);
-        }
-        return a.tried ? 1 : -1;
-      });
+  })
+  .sort((a, b) => {
+    if (a.tried === b.tried) {
+      return a.pigment2.localeCompare(b.pigment2);
+    }
+    return a.tried ? 1 : -1;
+  });
 
 function CalculateKnownCombos(pigment: string) {
-  const pigmentCombos = symmetricalKnownCombos.filter(x => x.pigment1 === pigment);
-  return Object.keys(Object.groupBy(pigmentCombos, x => x.result)).length;
+  const pigmentCombos = symmetricalKnownCombos.filter(
+    (x) => x.pigment1 === pigment
+  );
+  return Object.keys(Object.groupBy(pigmentCombos, (x) => x.result)).length;
 }
 
 // Extract unique pigment names
-const pigmentOptions = allPossiblePigments.map((pigment) => ({
-  value: pigment,
-  label: `${pigment} (${CalculateKnownCombos(pigment)})`,
-})).sort((a, b) => a.label.localeCompare(b.label));
+const pigmentOptions = allPossiblePigments
+  .map((pigment) => ({
+    value: pigment,
+    label: `${pigment} (${CalculateKnownCombos(pigment)})`,
+  }))
+  .sort((a, b) => a.label.localeCompare(b.label));
 
 // Combo search index
 const comboSearchIndex = lunr(function () {
@@ -124,7 +166,7 @@ export default function ColorMixer(props: IColorMixerProps) {
         padding: "0.5rem",
         borderRadius: "8px",
         backgroundColor: "#f9f9f9",
-        ...props.style
+        ...props.style,
       }}
     >
       <h2>Color Mixer</h2>
@@ -172,7 +214,9 @@ export default function ColorMixer(props: IColorMixerProps) {
             {highMatches.map(({ pigment2, tried, result }) => (
               <li key={pigment2}>
                 {selectedPigment} + {pigment2}{" "}
-                {tried ? (
+                {result === "Impossible" ? (
+                  <span style={{ color: "orange" }}>→ {result}</span>
+                ) : tried ? (
                   <span style={{ color: "green" }}>→ {result}</span>
                 ) : (
                   <span style={{ color: "gray" }}>(untried)</span>
@@ -190,7 +234,9 @@ export default function ColorMixer(props: IColorMixerProps) {
             {lowMatches.map(({ pigment2, pigment1, tried, result }) => (
               <li key={`${pigment1}-${pigment2}`}>
                 {pigment1} + {pigment2}{" "}
-                {tried ? (
+                {result === "Impossible" ? (
+                  <span style={{ color: "orange" }}>→ {result}</span>
+                ) : tried ? (
                   <span style={{ color: "green" }}>→ {result}</span>
                 ) : (
                   <span style={{ color: "gray" }}>(untried)</span>
