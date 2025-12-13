@@ -429,6 +429,7 @@ export default function WorldMap(props: IProps) {
                   >
                     {rawLandmarkGeo.features
                       .filter((x) => x.properties.zone === activeZone)
+                      .sort((a, b) => a.properties.name.localeCompare(b.properties.name))
                       .map((x) => (
                         <li
                           key={x.properties.name}
