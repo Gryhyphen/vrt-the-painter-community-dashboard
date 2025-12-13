@@ -36,10 +36,15 @@ const currentComboKnowledge = allPossibleCombos.map(
         return a.tried ? 1 : -1;
       });
 
+function CalculateKnownCombos(pigment: string) {
+  const pigmentCombos = symmetricalKnownCombos.filter(x => x.pigment1 === pigment);
+  return Object.keys(Object.groupBy(pigmentCombos, x => x.result)).length;
+}
+
 // Extract unique pigment names
 const pigmentOptions = allPossiblePigments.map((pigment) => ({
   value: pigment,
-  label: pigment,
+  label: `${pigment} (${CalculateKnownCombos(pigment)})`,
 })).sort((a, b) => a.label.localeCompare(b.label));
 
 // Combo search index
