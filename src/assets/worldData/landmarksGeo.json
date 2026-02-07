@@ -62,7 +62,9 @@
 {"type":"Feature","properties":{"zone":"bledavik","name":"Pigment: Ashen Char","category":"pigment"},"geometry":{"type":"Point","coordinates":[-371.094,-192.247]}},
 {"type":"Feature","properties":{"zone":"nortune_2","name":"Pigment: Cerulean-ish Ultramarine","category":"pigment"},"geometry":{"type":"Point","coordinates":[-227.813,-569.904]}},
 {"type":"Feature","properties":{"zone":"nortune","name":"Pigment: Xanadu","category":"pigment"},"geometry":{"type":"Point","coordinates":[-423.094,-592.153]}},
-{"type":"Feature","properties":{"zone":"nortune","name":"Pigment: Amaranthine Psychopomp","category":"pigment"},"geometry":{"type":"Point","coordinates":[-393,-555.872]}}
-
+{"type":"Feature","properties":{"zone":"nortune","name":"Pigment: Amaranthine Psychopomp","category":"pigment"},"geometry":{"type":"Point","coordinates":[-393,-555.872]}},
+{"type":"Feature","properties":{"zone":"sandcavern_3","name":"Pigment: Celestial Obsidian","category":"pigment"},"geometry":{"type":"Point","coordinates":[271.238,-223.148]}},
+{"type":"Feature","properties":{"zone":"dazil","name":"Pigment: Chimerical Sarcoline","category":"pigment"},"geometry":{"type":"Point","coordinates":[-175.571,-229.756]}},
+{"type":"Feature","properties":{"zone":"sandcavern_2","name":"Pigment: Lusty Gallan","category":"pigment"},"geometry":{"type":"Point","coordinates":[429.276,-272.894]}}
   ]
 }

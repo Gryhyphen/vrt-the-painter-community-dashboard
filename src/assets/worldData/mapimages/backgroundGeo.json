@@ -83,6 +83,38 @@
     },
     {
       "type": "Feature",
+      "id": "sandcavern_2",
+      "properties": {
+        "name": "Sand Cavern 2",
+        "region": "sandcavern",
+        "image": "SandCaven2Project.png",
+        "placement": {
+          "x": -317.25,
+          "y": -502.75,
+          "width": 134.8,
+          "height": 108.24
+        }
+      },
+      "geometry": null
+    },
+    {
+      "type": "Feature",
+      "id": "sandcavern_3",
+      "properties": {
+        "name": "Sand Cavern 3",
+        "region": "sandcavern",
+        "image": "SandCaven3Project.png",
+        "placement": {
+          "x": -313.95,
+          "y": -369.11,
+          "width": 120.7,
+          "height": 145.62
+        }
+      },
+      "geometry": null
+    },
+    {
+      "type": "Feature",
       "id": "nortune",
       "properties": {
         "name": "Nortune",

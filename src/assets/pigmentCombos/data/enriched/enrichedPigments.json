@@ -11,7 +11,7 @@
     "datePainted": "2025-10-25",
     "firstResultDiscovery": false,
     "painter": "Gry-",
-    "pigment1": "Metallic Sands",
+    "pigment1": "Metalic Sands",
     "pigment2": "Sinoper Shroud",
     "result": "Abstract Mess"
   },
@@ -181,6 +181,118 @@
     "painter": "~kitty",
     "pigment1": "Gormenghast Moss",
     "pigment2": "Aureolin Virulence ",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2025-12-13",
+    "firstResultDiscovery": false,
+    "painter": "Polaris_Exists",
+    "pigment1": "Ecru Winnower",
+    "pigment2": "Horizon Bound",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2025-12-13",
+    "firstResultDiscovery": false,
+    "painter": "Polaris_Exists",
+    "pigment1": "Cornsilk Strand",
+    "pigment2": "Celestial Obsidian",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2025-12-13",
+    "firstResultDiscovery": true,
+    "painter": "Starlight Angel",
+    "pigment1": "Ancient Argent",
+    "pigment2": "Old Guard Vogue Puce",
+    "result": "Scene: Old Theatre"
+  },
+  {
+    "datePainted": "2025-12-13",
+    "firstResultDiscovery": false,
+    "painter": "monstermash1007",
+    "pigment1": "Ten Thousand Emeralds",
+    "pigment2": "Ashen Char",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2025-12-13",
+    "firstResultDiscovery": false,
+    "painter": "monstermash1007",
+    "pigment1": "Orpiment Tabby",
+    "pigment2": "Xanadu",
+    "result": "Subject: Corroding Scrap "
+  },
+  {
+    "datePainted": "2025-12-13",
+    "firstResultDiscovery": false,
+    "painter": "Firework917",
+    "pigment1": "Cherry on Top",
+    "pigment2": "Cubic Periwinkle",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2025-12-13",
+    "firstResultDiscovery": true,
+    "painter": "Gry-",
+    "pigment1": "Gilded Bronze",
+    "pigment2": "Metalic Sands",
+    "result": "Subject: Kneeling Knight"
+  },
+  {
+    "datePainted": "2025-12-13",
+    "firstResultDiscovery": false,
+    "painter": "Gry-",
+    "pigment1": "True Eigengrau",
+    "pigment2": "Ten Thousand Emeralds",
+    "result": "Subject: Tree Of Time"
+  },
+  {
+    "datePainted": "2025-12-13",
+    "firstResultDiscovery": false,
+    "painter": "kruze",
+    "pigment1": "Orpiment Tabby",
+    "pigment2": "Skobeloff Forest",
+    "result": "Subject: Corroding Scrap "
+  },
+  {
+    "datePainted": "2025-12-13",
+    "firstResultDiscovery": false,
+    "painter": "FLOWRIDER0",
+    "pigment1": "Phlox Paroxysm",
+    "pigment2": "Nattier",
+    "result": "Scene: A Land Afar"
+  },
+  {
+    "datePainted": "2025-12-13",
+    "firstResultDiscovery": false,
+    "painter": "Diarmuid",
+    "pigment1": "Aureolin Virulence ",
+    "pigment2": "Xanadu",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2025-12-13",
+    "firstResultDiscovery": true,
+    "painter": "Diarmuid",
+    "pigment1": "Ten Thousand Emeralds",
+    "pigment2": "Smaragdine Sea",
+    "result": "Scene: City Park"
+  },
+  {
+    "datePainted": "2025-12-13",
+    "firstResultDiscovery": false,
+    "painter": "redfireyoshi",
+    "pigment1": "Cubic Periwinkle",
+    "pigment2": "Warm Sienna",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2025-12-13",
+    "firstResultDiscovery": false,
+    "painter": "Luminus 9-4",
+    "pigment1": "True Eigengrau",
+    "pigment2": "Cerulean-ish Ultramarine",
     "result": "Abstract Mess"
   },
   {
@@ -371,7 +483,7 @@
     "datePainted": "2025-09-13",
     "firstResultDiscovery": false,
     "painter": null,
-    "pigment1": "Metallic Sands",
+    "pigment1": "Metalic Sands",
     "pigment2": "Phlox Paroxysm",
     "result": "Abstract Mess"
   },
@@ -645,6 +757,22 @@
     "painter": null,
     "pigment1": "Plumbeous Cinder",
     "pigment2": "True Eigengrau",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2025-12-13",
+    "firstResultDiscovery": false,
+    "painter": null,
+    "pigment1": "Albescent Iridescence",
+    "pigment2": "Corrupted Vermillion",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2025-12-13",
+    "firstResultDiscovery": false,
+    "painter": null,
+    "pigment1": "Han Purple",
+    "pigment2": "Warm Sienna",
     "result": "Abstract Mess"
   }
 ]
