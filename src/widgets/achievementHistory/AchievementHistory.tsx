@@ -29,6 +29,9 @@ const emojiForResult = (result: string): string => {
   if (normalized.includes("crowd of travellers")) return "👨‍👩‍👧‍👦";
   if (normalized.includes("university-bound students")) return "🎓";
   if (normalized.includes("demon")) return "👹";
+  if (normalized.includes("kneeling knight")) return "🧎‍♂️";
+  if (normalized.includes("old theatre")) return "🎭";
+  if (normalized.includes("city park")) return "🏞️";
   return "✨";
 };
 
