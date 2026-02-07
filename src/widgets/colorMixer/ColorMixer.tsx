@@ -3,6 +3,7 @@ import PigmentData from "../../assets/pigmentCombos/data/enriched/enrichedPigmen
 import { useMemo, useState } from "react";
 import lunr from "lunr";
 import LandmarkData from "../../assets/worldData/landmarksGeo.json";
+import BackgroundData from "../../assets/worldData/mapimages/backgroundGeo.json";
 
 const symmetricalKnownCombos = PigmentData.flatMap((x) => [
   x,
@@ -38,10 +39,18 @@ function CalculateRegionCompatibility(pigment1: string, pigment2: string) {
 
   const zone1 = pigment1Landmark.properties.zone;
   const zone2 = pigment2Landmark.properties.zone;
+
+  // Get regions
+  // Have to bring in the backgroundGeo to calculate the regions
+  const region1 = BackgroundData.features.find(x => x.id === zone1)?.properties.region;
+  const region2 = BackgroundData.features.find(x => x.id === zone2)?.properties.region;
+
+  // Mutually exclusive region group, can't mix pigments from these regions
+  const exclusiveGroup = ["nortune", "sandcavern"];
+  if (region1 && region2 && exclusiveGroup.includes(region1) && exclusiveGroup.includes(region2)) { return false; }
+
   // Can't mix pigments in the same region.
-  // TODO: Zones != Regions
-  // Would need to bring in the backgroundGeo to calculate the regions.
-  return zone1 !== zone2;
+  return region1 !== region2;
 }
 
 const currentComboKnowledge = allPossibleCombos
