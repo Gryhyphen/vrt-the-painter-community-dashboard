@@ -1,0 +1,11 @@
+{
+  "name": "pigment-combo-pipeline",
+  "version": "1.0.0",
+  "description": "Pigment combo data pipeline using Dagu workflow orchestration",
+  "scripts": {
+    "pigment-combo-pipeline": ".\\node_modules\\@dagu-org\\dagu\\dagu.exe start dags\\pigment-pipeline.yaml"
+  },
+  "devDependencies": {
+    "@dagu-org/dagu": "^1.30.2"
+  }
+}
