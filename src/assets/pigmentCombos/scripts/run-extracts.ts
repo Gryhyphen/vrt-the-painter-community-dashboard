@@ -53,7 +53,7 @@ const runNotebookPartition = (inputCsv: string, outputFilename: string, runOutpu
       '--output-format', 'ipynb'
     ];
 
-    const child = spawn('dotnet', args, { stdio: 'inherit' });
+    const child = spawn('dotnet', args, { stdio: 'inherit', cwd: 'notebooks' });
 
     // Handle launch failures (e.g., binary not found)
     child.on('error', (err) => {
