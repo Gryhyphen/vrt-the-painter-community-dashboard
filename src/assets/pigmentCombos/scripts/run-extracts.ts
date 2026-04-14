@@ -3,6 +3,7 @@ import { join } from 'node:path';
 import { exit } from 'node:process';
 import { promisify } from 'node:util';
 import { glob } from 'node:fs/promises';
+import { Readable } from 'node:stream';
 
 // Manually wrap the callback-based API into a Promise
 const execFile = promisify(execFileCallback);
@@ -92,14 +93,15 @@ const main = async (): Promise<void> => {
   });
 
   // Materalize
-  for (const partition of partitions) {
-    console.log(`Processing ${partition.originalName}...`);
-    try {
-      await runNotebookPartition(partition.inputCsv, partition.outputFilename, partition.runOutputPath);
-    } catch (err) {
-      console.log(err);
-    }
-  }
+  const CONCURRENCY_LIMIT = 3;
+  await Readable.from(partitions)
+    .forEach(async (partition) => {
+      try {
+        await runNotebookPartition(partition.inputCsv, partition.outputFilename, partition.runOutputPath);
+      } catch (err) {
+        console.error(`❌ Failed: ${partition.originalName}`, err);
+      }
+    }, { concurrency: CONCURRENCY_LIMIT });
 };
 
 // ==================== EXECUTE ====================
