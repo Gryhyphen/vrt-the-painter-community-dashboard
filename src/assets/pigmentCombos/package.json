@@ -7,7 +7,7 @@
     "run-extracts": "node --experimental-strip-types scripts/run-extracts.ts",
     "run-cleans": "node --experimental-strip-types scripts/run-cleans.ts",
     "run-enrich": "node --experimental-strip-types scripts/run-enrich.ts",
-    "run-all": "node --experimental-strip-types scripts/run-all.ts"
+    "run-all": "npm run run-extracts && npm run run-cleans && npm run run-enrich"
   },
   "devDependencies": {
     "@types/node": "^25.6.0"
