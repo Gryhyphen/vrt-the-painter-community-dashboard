@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    /* Base Environment */
+    "target": "esnext",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    
+    /* Type Checking */
+    "strict": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    
+    /* Node.js Specifics */
+    "types": ["node"],
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    
+    /* Output Control */
+    "noEmit": true, // run via node --run
+    "isolatedModules": true
+  },
+  "include": ["scripts/**/*.ts"],
+  "exclude": ["node_modules"]
+}
