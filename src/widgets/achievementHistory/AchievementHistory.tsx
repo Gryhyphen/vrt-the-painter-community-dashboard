@@ -32,6 +32,9 @@ const emojiForResult = (result: string): string => {
   if (normalized.includes("kneeling knight")) return "🧎‍♂️";
   if (normalized.includes("old theatre")) return "🎭";
   if (normalized.includes("city park")) return "🏞️";
+  if (normalized.includes("panda")) return "🐼";
+  if (normalized.includes("self portrait")) return "👨‍🎨";
+  if (normalized.includes("moonlit")) return "🌕";
   return "✨";
 };
 
