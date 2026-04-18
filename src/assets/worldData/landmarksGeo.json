@@ -65,6 +65,10 @@
 {"type":"Feature","properties":{"zone":"nortune","name":"Pigment: Amaranthine Psychopomp","category":"pigment"},"geometry":{"type":"Point","coordinates":[-393,-555.872]}},
 {"type":"Feature","properties":{"zone":"sandcavern_3","name":"Pigment: Celestial Obsidian","category":"pigment"},"geometry":{"type":"Point","coordinates":[271.238,-223.148]}},
 {"type":"Feature","properties":{"zone":"dazil","name":"Pigment: Chimerical Sarcoline","category":"pigment"},"geometry":{"type":"Point","coordinates":[-175.571,-229.756]}},
-{"type":"Feature","properties":{"zone":"sandcavern_2","name":"Pigment: Lusty Gallan","category":"pigment"},"geometry":{"type":"Point","coordinates":[429.276,-272.894]}}
+{"type":"Feature","properties":{"zone":"sandcavern_2","name":"Pigment: Lusty Gallan","category":"pigment"},"geometry":{"type":"Point","coordinates":[429.276,-272.894]}},
+{"type":"Feature","properties":{"zone":"bledavik","name":"Pigment: Aureolin Virulence","category":"pigment"},"geometry":{"type":"Point","coordinates":[-334.785,-221.406]}},
+{"type":"Feature","properties":{"zone":"lahanVillage","name":"Pigment: Sinoper Shroud","category":"pigment"},"geometry":{"type":"Point","coordinates":[-124.841,19.938]}},
+{"type":"Feature","properties":{"zone":"lahanVillage","name":"Pigment: A Vague Sense of Unease","category":"pigment"},"geometry":{"type":"Point","coordinates":[-128.207,40.375]}},
+{"type":"Feature","properties":{"zone":"sandcavern_3","name":"Pigment: Plumbeous Cinder","category":"pigment"},"geometry":{"type":"Point","coordinates":[259.415,-282.25]}}
   ]
 }
