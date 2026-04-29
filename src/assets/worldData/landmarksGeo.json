@@ -69,6 +69,19 @@
 {"type":"Feature","properties":{"zone":"bledavik","name":"Pigment: Aureolin Virulence","category":"pigment"},"geometry":{"type":"Point","coordinates":[-334.785,-221.406]}},
 {"type":"Feature","properties":{"zone":"lahanVillage","name":"Pigment: Sinoper Shroud","category":"pigment"},"geometry":{"type":"Point","coordinates":[-124.841,19.938]}},
 {"type":"Feature","properties":{"zone":"lahanVillage","name":"Pigment: A Vague Sense of Unease","category":"pigment"},"geometry":{"type":"Point","coordinates":[-128.207,40.375]}},
-{"type":"Feature","properties":{"zone":"sandcavern_3","name":"Pigment: Plumbeous Cinder","category":"pigment"},"geometry":{"type":"Point","coordinates":[259.415,-282.25]}}
+{"type":"Feature","properties":{"zone":"sandcavern_3","name":"Pigment: Plumbeous Cinder","category":"pigment"},"geometry":{"type":"Point","coordinates":[259.415,-282.25]}},
+       {"type":"Feature","properties":{"zone":"lahanVillage","name":"Pigment: Laminar Claret","category":"pigment"},"geometry":{"type":"Point","coordinates":[-154.797,1.703]}},
+        {"type":"Feature","properties":{"zone":"bledavik","name":"Pigment: Crystalline Blue","category":"pigment"},"geometry":{"type":"Point","coordinates":[-393.488,-198.063]}},
+        {"type":"Feature","properties":{"zone":"lahanVillage","name":"Pigment: Orpiment Tabby","category":"pigment"},"geometry":{"type":"Point","coordinates":[-132.011,-5.26]}},
+        {"type":"Feature","properties":{"zone":"dazil","name":"Pigment: Corrupted Vermilion","category":"pigment"},"geometry":{"type":"Point","coordinates":[-174.816,-185.409]}},
+        {"type":"Feature","properties":{"zone":"nortune","name":"Pigment: Inchoate Wossname","category":"pigment"},"geometry":{"type":"Point","coordinates":[-386.801,-587.181]}},
+        {"type":"Feature","properties":{"zone":"dazil","name":"Pigment: Bianco di San Giovanni","category":"pigment"},"geometry":{"type":"Point","coordinates":[-144.375,-231.249]}},
+        {"type":"Feature","properties":{"zone":"dazil","name":"Pigment: Earthen Twine","category":"pigment"},"geometry":{"type":"Point","coordinates":[-195.952,-165.706]}},
+        {"type":"Feature","properties":{"zone":"lahanVillage","name":"Pigment: Ecru Winnower","category":"pigment"},"geometry":{"type":"Point","coordinates":[-170.295,-2.234]}},
+        {"type":"Feature","properties":{"zone":"lahanVillage","name":"Pigment: Smaragdine Sea","category":"pigment"},"geometry":{"type":"Point","coordinates":[-130.178,-11.751]}},
+        {"type":"Feature","properties":{"zone":"bledavik_2","name":"Pigment: Flame of Burnt Brandy","category":"pigment"},"geometry":{"type":"Point","coordinates":[-0.507,-392.961]}},
+        {"type":"Feature","properties":{"zone":"lahanVillage","name":"Pigment: Eburnean Sky-Sail","category":"pigment"},"geometry":{"type":"Point","coordinates":[-151.791,-9.492]}},
+        {"type":"Feature","properties":{"zone":"sandcavern_2","name":"Pigment: Skobeloff Forest","category":"pigment"},"geometry":{"type":"Point","coordinates":[454.048,-263.418]}},
+        {"type":"Feature","properties":{"zone":"sandcavern_3","name":"Pigment: Sky Captains Spruce","category":"pigment"},"geometry":{"type":"Point","coordinates":[257.297,-270.812]}}
   ]
 }
