@@ -92,7 +92,7 @@
     "firstResultDiscovery": true,
     "painter": "Diarmuid",
     "pigment1": "Amaranthine Psychopomp",
-    "pigment2": "Corrupted Vermillion",
+    "pigment2": "Corrupted Vermilion",
     "result": "Subject: Demon"
   },
   {
@@ -148,7 +148,7 @@
     "firstResultDiscovery": false,
     "painter": "Angel",
     "pigment1": "Phlox Paroxysm",
-    "pigment2": "Aureolin Virulence ",
+    "pigment2": "Aureolin Virulence",
     "result": "Abstract Mess"
   },
   {
@@ -180,7 +180,7 @@
     "firstResultDiscovery": false,
     "painter": "~kitty",
     "pigment1": "Gormenghast Moss",
-    "pigment2": "Aureolin Virulence ",
+    "pigment2": "Aureolin Virulence",
     "result": "Abstract Mess"
   },
   {
@@ -221,7 +221,7 @@
     "painter": "monstermash1007",
     "pigment1": "Orpiment Tabby",
     "pigment2": "Xanadu",
-    "result": "Subject: Corroding Scrap "
+    "result": "Subject: Corroding Scrap"
   },
   {
     "datePainted": "2025-12-13",
@@ -253,7 +253,7 @@
     "painter": "kruze",
     "pigment1": "Orpiment Tabby",
     "pigment2": "Skobeloff Forest",
-    "result": "Subject: Corroding Scrap "
+    "result": "Subject: Corroding Scrap"
   },
   {
     "datePainted": "2025-12-13",
@@ -267,7 +267,7 @@
     "datePainted": "2025-12-13",
     "firstResultDiscovery": false,
     "painter": "Diarmuid",
-    "pigment1": "Aureolin Virulence ",
+    "pigment1": "Aureolin Virulence",
     "pigment2": "Xanadu",
     "result": "Abstract Mess"
   },
@@ -316,7 +316,7 @@
     "firstResultDiscovery": true,
     "painter": "Diarmuid",
     "pigment1": "Laminar Claret",
-    "pigment2": "Aureolin Virulence ",
+    "pigment2": "Aureolin Virulence",
     "result": "Scene: Uncanny Moonlit Sky"
   },
   {
@@ -364,7 +364,7 @@
     "firstResultDiscovery": false,
     "painter": "redfireyoshi",
     "pigment1": "Inchoate Wossname",
-    "pigment2": "Aureolin Virulence ",
+    "pigment2": "Aureolin Virulence",
     "result": "Abstract Mess"
   },
   {
@@ -392,20 +392,156 @@
     "result": "Abstract Mess"
   },
   {
-    "datePainted": "2025-08-30",
+    "datePainted": "2026-04-18",
+    "firstResultDiscovery": false,
+    "painter": "Pyachi",
+    "pigment1": "Eburnean Sky-Sail",
+    "pigment2": "Cerulean-ish Ultramarine",
+    "result": "Scene: Above The Clouds"
+  },
+  {
+    "datePainted": "2026-04-18",
     "firstResultDiscovery": true,
-    "painter": null,
+    "painter": "Angel",
+    "pigment1": "Crystaline Blue",
+    "pigment2": "Smaragdine Sea",
+    "result": "Scene: Distorted Ocean Floor"
+  },
+  {
+    "datePainted": "2026-04-18",
+    "firstResultDiscovery": true,
+    "painter": "Angel",
     "pigment1": "Ancient Argent",
-    "pigment2": "Corrupted Vermillion",
+    "pigment2": "Earthen Twine",
+    "result": "Subject: Airship Of Ether Infused Iron And Wood"
+  },
+  {
+    "datePainted": "2026-04-18",
+    "firstResultDiscovery": false,
+    "painter": "Trikicat",
+    "pigment1": "Ecru Winnower",
+    "pigment2": "Cornsilk Strand",
     "result": "Abstract Mess"
   },
   {
-    "datePainted": "2025-08-30",
+    "datePainted": "2026-04-18",
+    "firstResultDiscovery": false,
+    "painter": "Treijim",
+    "pigment1": "Rotting Pearl",
+    "pigment2": "Albescent Iridescence",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2026-04-18",
+    "firstResultDiscovery": false,
+    "painter": "redfireyoshi",
+    "pigment1": "Bianco di San Giovanni",
+    "pigment2": "Old Guard Vogue Puce",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2026-04-18",
+    "firstResultDiscovery": false,
+    "painter": "redfireyoshi",
+    "pigment1": "Celestial Obsidian",
+    "pigment2": "Ecru Winnower",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2026-04-18",
+    "firstResultDiscovery": false,
+    "painter": "Luminus 9-4",
+    "pigment1": "A Vague Sense of Unease",
+    "pigment2": "Rotting Pearl",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2026-04-18",
+    "firstResultDiscovery": false,
+    "painter": "Luminus 9-4",
+    "pigment1": "Old Guard Vogue Puce",
+    "pigment2": "Cherry on Top",
+    "result": "Subject: A Heart Held Close"
+  },
+  {
+    "datePainted": "2026-04-18",
+    "firstResultDiscovery": false,
+    "painter": "Gry-",
+    "pigment1": "Old Guard Vogue Puce",
+    "pigment2": "Xanadu",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2026-04-18",
+    "firstResultDiscovery": false,
+    "painter": "Gry-",
+    "pigment1": "Sinoper Shroud",
+    "pigment2": "Cubic Periwinkle",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2025-09-13",
     "firstResultDiscovery": true,
     "painter": null,
-    "pigment1": "Gormenghast Moss",
-    "pigment2": "Nattier",
-    "result": "Scene: Countryside Railroad"
+    "pigment1": "Amaranthine Psychopomp",
+    "pigment2": "Crystaline Blue",
+    "result": "Scene: Magical Catdom"
+  },
+  {
+    "datePainted": "2026-04-18",
+    "firstResultDiscovery": false,
+    "painter": "~kitty",
+    "pigment1": "Han Purple",
+    "pigment2": "Albescent Iridescence",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2026-04-18",
+    "firstResultDiscovery": false,
+    "painter": "~kitty",
+    "pigment1": "A Vague Sense of Unease",
+    "pigment2": "Ten Thousand Emeralds",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2026-04-18",
+    "firstResultDiscovery": false,
+    "painter": "uyjulian",
+    "pigment1": "Eburnean Sky-Sail",
+    "pigment2": "Caput Mortuum",
+    "result": "Subject: Oddly Colored Mech"
+  },
+  {
+    "datePainted": "2026-04-18",
+    "firstResultDiscovery": false,
+    "painter": "uyjulian",
+    "pigment1": "Sky Captain\u0027s Spruce",
+    "pigment2": "Cubic Periwinkle",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2026-04-18",
+    "firstResultDiscovery": false,
+    "painter": null,
+    "pigment1": "Earthen Twine",
+    "pigment2": "A Flame of Burnt Brandy",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2026-04-18",
+    "firstResultDiscovery": false,
+    "painter": null,
+    "pigment1": "A Vague Sense of Unease",
+    "pigment2": "Cherry on Top",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2026-04-18",
+    "firstResultDiscovery": true,
+    "painter": "kruze",
+    "pigment1": "A Vague Sense of Unease",
+    "pigment2": "Ashen Char",
+    "result": "Scene: Destroyed City"
   },
   {
     "datePainted": "2025-09-13",
@@ -417,19 +553,27 @@
   },
   {
     "datePainted": "2025-09-13",
-    "firstResultDiscovery": false,
-    "painter": null,
-    "pigment1": "Albescent Iridescence",
-    "pigment2": "Inchoate Wossname",
-    "result": "Abstract Mess"
-  },
-  {
-    "datePainted": "2025-09-13",
     "firstResultDiscovery": true,
     "painter": null,
     "pigment1": "Albescent Iridescence",
     "pigment2": "Orpiment Tabby",
     "result": "Scene: Village In A Time Pocket"
+  },
+  {
+    "datePainted": "2025-10-05",
+    "firstResultDiscovery": false,
+    "painter": null,
+    "pigment1": "Albescent Iridescence",
+    "pigment2": "Bianco di San Giovanni",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2025-10-05",
+    "firstResultDiscovery": false,
+    "painter": null,
+    "pigment1": "Albescent Iridescence",
+    "pigment2": "Ten Thousand Emeralds",
+    "result": "Subject: Tree Of Time"
   },
   {
     "datePainted": "2025-09-13",
@@ -441,11 +585,19 @@
   },
   {
     "datePainted": "2025-09-13",
-    "firstResultDiscovery": true,
+    "firstResultDiscovery": false,
     "painter": null,
-    "pigment1": "Amaranthine Psychopomp",
-    "pigment2": "Crystaline Blue",
-    "result": "Scene: Magical Catdom"
+    "pigment1": "Albescent Iridescence",
+    "pigment2": "Inchoate Wossname",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2025-10-05",
+    "firstResultDiscovery": false,
+    "painter": null,
+    "pigment1": "Albescent Iridescence",
+    "pigment2": "Lusty Gallan",
+    "result": "Scene: Village In A Time Pocket"
   },
   {
     "datePainted": "2025-09-13",
@@ -453,6 +605,14 @@
     "painter": null,
     "pigment1": "Amaranthine Psychopomp",
     "pigment2": "Ecru Winnower",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2025-10-05",
+    "firstResultDiscovery": false,
+    "painter": null,
+    "pigment1": "Amaranthine Psychopomp",
+    "pigment2": "Phlox Paroxysm",
     "result": "Abstract Mess"
   },
   {
@@ -464,174 +624,6 @@
     "result": "Scene: A Land Afar"
   },
   {
-    "datePainted": "2025-09-13",
-    "firstResultDiscovery": false,
-    "painter": null,
-    "pigment1": "Ancient Argent",
-    "pigment2": "Bianco di San Giovanni",
-    "result": "Abstract Mess"
-  },
-  {
-    "datePainted": "2025-09-13",
-    "firstResultDiscovery": false,
-    "painter": null,
-    "pigment1": "Ancient Argent",
-    "pigment2": "Gormenghast Moss",
-    "result": "Abstract Mess"
-  },
-  {
-    "datePainted": "2025-09-13",
-    "firstResultDiscovery": false,
-    "painter": null,
-    "pigment1": "Ashen Char",
-    "pigment2": "Cerulean-ish Ultramarine",
-    "result": "Abstract Mess"
-  },
-  {
-    "datePainted": "2025-09-13",
-    "firstResultDiscovery": false,
-    "painter": null,
-    "pigment1": "Ashen Char",
-    "pigment2": "Drunkard\u0027s Pillow",
-    "result": "Abstract Mess"
-  },
-  {
-    "datePainted": "2025-09-13",
-    "firstResultDiscovery": true,
-    "painter": null,
-    "pigment1": "Bianco di San Giovanni",
-    "pigment2": "Cherry on Top",
-    "result": "Subject: Oddly Colored Mech"
-  },
-  {
-    "datePainted": "2025-09-13",
-    "firstResultDiscovery": false,
-    "painter": null,
-    "pigment1": "Bianco di San Giovanni",
-    "pigment2": "Gormenghast Moss",
-    "result": "Abstract Mess"
-  },
-  {
-    "datePainted": "2025-09-13",
-    "firstResultDiscovery": false,
-    "painter": null,
-    "pigment1": "Bianco di San Giovanni",
-    "pigment2": "Plumbeous Cinder",
-    "result": "Abstract Mess"
-  },
-  {
-    "datePainted": "2025-09-13",
-    "firstResultDiscovery": true,
-    "painter": null,
-    "pigment1": "Bianco di San Giovanni",
-    "pigment2": "Sinoper Shroud",
-    "result": "Subject: Oddly Colored Mech"
-  },
-  {
-    "datePainted": "2025-09-13",
-    "firstResultDiscovery": false,
-    "painter": null,
-    "pigment1": "Bianco di San Giovanni",
-    "pigment2": "Warm Sienna",
-    "result": "Abstract Mess"
-  },
-  {
-    "datePainted": "2025-09-13",
-    "firstResultDiscovery": false,
-    "painter": null,
-    "pigment1": "Cerulean-ish Ultramarine",
-    "pigment2": "Crystaline Blue",
-    "result": "Abstract Mess"
-  },
-  {
-    "datePainted": "2025-09-13",
-    "firstResultDiscovery": false,
-    "painter": null,
-    "pigment1": "Cerulean-ish Ultramarine",
-    "pigment2": "Drunkard\u0027s Pillow",
-    "result": "Abstract Mess"
-  },
-  {
-    "datePainted": "2025-09-13",
-    "firstResultDiscovery": false,
-    "painter": null,
-    "pigment1": "Crystaline Blue",
-    "pigment2": "Orpiment Tabby",
-    "result": "Abstract Mess"
-  },
-  {
-    "datePainted": "2025-09-13",
-    "firstResultDiscovery": false,
-    "painter": null,
-    "pigment1": "Ecru Winnower",
-    "pigment2": "Phlox Paroxysm",
-    "result": "Abstract Mess"
-  },
-  {
-    "datePainted": "2025-09-13",
-    "firstResultDiscovery": false,
-    "painter": null,
-    "pigment1": "Ecru Winnower",
-    "pigment2": "Ten Thousand Emeralds",
-    "result": "Abstract Mess"
-  },
-  {
-    "datePainted": "2025-09-13",
-    "firstResultDiscovery": false,
-    "painter": null,
-    "pigment1": "Metalic Sands",
-    "pigment2": "Phlox Paroxysm",
-    "result": "Abstract Mess"
-  },
-  {
-    "datePainted": "2025-09-13",
-    "firstResultDiscovery": false,
-    "painter": null,
-    "pigment1": "Old Guard Vogue Puce",
-    "pigment2": "Orpiment Tabby",
-    "result": "Abstract Mess"
-  },
-  {
-    "datePainted": "2025-09-13",
-    "firstResultDiscovery": true,
-    "painter": null,
-    "pigment1": "Phlox Paroxysm",
-    "pigment2": "Sinoper Shroud",
-    "result": "Subject: A Heart Held Close"
-  },
-  {
-    "datePainted": "2025-10-05",
-    "firstResultDiscovery": false,
-    "painter": null,
-    "pigment1": "Albescent Iridescence",
-    "pigment2": "Bianco di San Giovanni",
-    "result": "Abstract Mess"
-  },
-  {
-    "datePainted": "2025-10-05",
-    "firstResultDiscovery": false,
-    "painter": null,
-    "pigment1": "Albescent Iridescence",
-    "pigment2": "Ten Thousand Emeralds",
-    "result": "Subject: Tree Of Time"
-  },
-  {
-    "datePainted": "2025-10-05",
-    "firstResultDiscovery": false,
-    "painter": null,
-    "pigment1": "Albescent Iridescence",
-    "pigment2": "Lusty Gallan",
-    "result": "Scene: Village In A Time Pocket"
-  },
-  {
-    "datePainted": "2025-10-05",
-    "firstResultDiscovery": false,
-    "painter": null,
-    "pigment1": "Amaranthine Psychopomp",
-    "pigment2": "Phlox Paroxysm",
-    "result": "Abstract Mess"
-  },
-  {
     "datePainted": "2025-10-05",
     "firstResultDiscovery": false,
     "painter": null,
@@ -640,11 +632,35 @@
     "result": "Scene: Magical Catdom"
   },
   {
+    "datePainted": "2025-09-13",
+    "firstResultDiscovery": false,
+    "painter": null,
+    "pigment1": "Ancient Argent",
+    "pigment2": "Gormenghast Moss",
+    "result": "Abstract Mess"
+  },
+  {
     "datePainted": "2025-10-05",
     "firstResultDiscovery": false,
     "painter": null,
     "pigment1": "Ancient Argent",
     "pigment2": "Warm Sienna",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2025-09-13",
+    "firstResultDiscovery": false,
+    "painter": null,
+    "pigment1": "Ancient Argent",
+    "pigment2": "Bianco di San Giovanni",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2025-08-30",
+    "firstResultDiscovery": true,
+    "painter": null,
+    "pigment1": "Ancient Argent",
+    "pigment2": "Corrupted Vermilion",
     "result": "Abstract Mess"
   },
   {
@@ -680,6 +696,62 @@
     "result": "Abstract Mess"
   },
   {
+    "datePainted": "2025-09-13",
+    "firstResultDiscovery": false,
+    "painter": null,
+    "pigment1": "Ashen Char",
+    "pigment2": "Cerulean-ish Ultramarine",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2025-09-13",
+    "firstResultDiscovery": false,
+    "painter": null,
+    "pigment1": "Ashen Char",
+    "pigment2": "Drunkard\u0027s Pillow",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2025-09-13",
+    "firstResultDiscovery": false,
+    "painter": null,
+    "pigment1": "Bianco di San Giovanni",
+    "pigment2": "Gormenghast Moss",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2025-09-13",
+    "firstResultDiscovery": true,
+    "painter": null,
+    "pigment1": "Bianco di San Giovanni",
+    "pigment2": "Sinoper Shroud",
+    "result": "Subject: Oddly Colored Mech"
+  },
+  {
+    "datePainted": "2025-09-13",
+    "firstResultDiscovery": false,
+    "painter": null,
+    "pigment1": "Bianco di San Giovanni",
+    "pigment2": "Warm Sienna",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2025-09-13",
+    "firstResultDiscovery": false,
+    "painter": null,
+    "pigment1": "Bianco di San Giovanni",
+    "pigment2": "Plumbeous Cinder",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2025-09-13",
+    "firstResultDiscovery": true,
+    "painter": null,
+    "pigment1": "Bianco di San Giovanni",
+    "pigment2": "Cherry on Top",
+    "result": "Subject: Oddly Colored Mech"
+  },
+  {
     "datePainted": "2025-10-05",
     "firstResultDiscovery": false,
     "painter": null,
@@ -696,11 +768,35 @@
     "result": "Abstract Mess"
   },
   {
+    "datePainted": "2025-09-13",
+    "firstResultDiscovery": false,
+    "painter": null,
+    "pigment1": "Cerulean-ish Ultramarine",
+    "pigment2": "Crystaline Blue",
+    "result": "Abstract Mess"
+  },
+  {
     "datePainted": "2025-10-05",
     "firstResultDiscovery": false,
     "painter": null,
     "pigment1": "Cerulean-ish Ultramarine",
     "pigment2": "Plumbeous Cinder",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2025-09-13",
+    "firstResultDiscovery": false,
+    "painter": null,
+    "pigment1": "Cerulean-ish Ultramarine",
+    "pigment2": "Drunkard\u0027s Pillow",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2025-09-13",
+    "firstResultDiscovery": false,
+    "painter": null,
+    "pigment1": "Crystaline Blue",
+    "pigment2": "Orpiment Tabby",
     "result": "Abstract Mess"
   },
   {
@@ -728,12 +824,36 @@
     "result": "Abstract Mess"
   },
   {
+    "datePainted": "2025-09-13",
+    "firstResultDiscovery": false,
+    "painter": null,
+    "pigment1": "Ecru Winnower",
+    "pigment2": "Ten Thousand Emeralds",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2025-09-13",
+    "firstResultDiscovery": false,
+    "painter": null,
+    "pigment1": "Ecru Winnower",
+    "pigment2": "Phlox Paroxysm",
+    "result": "Abstract Mess"
+  },
+  {
     "datePainted": "2025-10-05",
     "firstResultDiscovery": false,
     "painter": null,
     "pigment1": "Gilded Bronze",
     "pigment2": "Inchoate Wossname",
     "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2025-08-30",
+    "firstResultDiscovery": true,
+    "painter": null,
+    "pigment1": "Gormenghast Moss",
+    "pigment2": "Nattier",
+    "result": "Scene: Countryside Railroad"
   },
   {
     "datePainted": "2025-10-05",
@@ -744,12 +864,36 @@
     "result": "Scene: Village In A Time Pocket"
   },
   {
+    "datePainted": "2025-09-13",
+    "firstResultDiscovery": false,
+    "painter": null,
+    "pigment1": "Metalic Sands",
+    "pigment2": "Phlox Paroxysm",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2025-09-13",
+    "firstResultDiscovery": false,
+    "painter": null,
+    "pigment1": "Old Guard Vogue Puce",
+    "pigment2": "Orpiment Tabby",
+    "result": "Abstract Mess"
+  },
+  {
     "datePainted": "2025-10-05",
     "firstResultDiscovery": false,
     "painter": null,
     "pigment1": "Orpiment Tabby",
     "pigment2": "Sky Captain\u0027s Spruce",
     "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2025-09-13",
+    "firstResultDiscovery": true,
+    "painter": null,
+    "pigment1": "Phlox Paroxysm",
+    "pigment2": "Sinoper Shroud",
+    "result": "Subject: A Heart Held Close"
   },
   {
     "datePainted": "2025-10-25",
@@ -829,7 +973,71 @@
     "painter": null,
     "pigment1": "Orpiment Tabby",
     "pigment2": "Ten Thousand Emeralds",
-    "result": "Subject: Corroding Scrap "
+    "result": "Subject: Corroding Scrap"
+  },
+  {
+    "datePainted": "2026-02-07",
+    "firstResultDiscovery": true,
+    "painter": null,
+    "pigment1": "A Vague Sense of Unease",
+    "pigment2": "Bianco di San Giovanni",
+    "result": "Subject: Panda In Chef Hat \u0026 Apron"
+  },
+  {
+    "datePainted": "2026-04-18",
+    "firstResultDiscovery": false,
+    "painter": null,
+    "pigment1": "A Vague Sense of Unease",
+    "pigment2": "Han Purple",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2026-04-18",
+    "firstResultDiscovery": false,
+    "painter": null,
+    "pigment1": "Albescent Iridescence",
+    "pigment2": "Warm Sienna",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2026-04-18",
+    "firstResultDiscovery": false,
+    "painter": null,
+    "pigment1": "Ashen Char",
+    "pigment2": "Cherry on Top",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2026-04-18",
+    "firstResultDiscovery": false,
+    "painter": null,
+    "pigment1": "Bianco di San Giovanni",
+    "pigment2": "Eburnean Sky-Sail",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2026-04-18",
+    "firstResultDiscovery": false,
+    "painter": null,
+    "pigment1": "Drunkard\u0027s Pillow",
+    "pigment2": "Gilded Bronze",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2026-04-18",
+    "firstResultDiscovery": false,
+    "painter": null,
+    "pigment1": "Ecru Winnower",
+    "pigment2": "Nattier",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2026-04-18",
+    "firstResultDiscovery": false,
+    "painter": null,
+    "pigment1": "Sky Captain\u0027s Spruce",
+    "pigment2": "Ten Thousand Emeralds",
+    "result": "Abstract Mess"
   },
   {
     "datePainted": "2025-11-22",
@@ -860,7 +1068,7 @@
     "firstResultDiscovery": false,
     "painter": null,
     "pigment1": "Albescent Iridescence",
-    "pigment2": "Corrupted Vermillion",
+    "pigment2": "Corrupted Vermilion",
     "result": "Abstract Mess"
   },
   {
@@ -873,17 +1081,9 @@
   },
   {
     "datePainted": "2026-02-07",
-    "firstResultDiscovery": true,
-    "painter": null,
-    "pigment1": "A Vague Sense of Unease",
-    "pigment2": "Bianco di San Giovanni",
-    "result": "Subject: Panda In Chef Hat \u0026 Apron"
-  },
-  {
-    "datePainted": "2026-02-07",
     "firstResultDiscovery": false,
     "painter": null,
-    "pigment1": "Aureolin Virulence ",
+    "pigment1": "Aureolin Virulence",
     "pigment2": "Orpiment Tabby",
     "result": "Scene: Soup Kitchen"
   }
