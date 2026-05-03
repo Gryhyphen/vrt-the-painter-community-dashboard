@@ -82,6 +82,12 @@
         {"type":"Feature","properties":{"zone":"bledavik_2","name":"Pigment: Flame of Burnt Brandy","category":"pigment"},"geometry":{"type":"Point","coordinates":[-0.507,-392.961]}},
         {"type":"Feature","properties":{"zone":"lahanVillage","name":"Pigment: Eburnean Sky-Sail","category":"pigment"},"geometry":{"type":"Point","coordinates":[-151.791,-9.492]}},
         {"type":"Feature","properties":{"zone":"sandcavern_2","name":"Pigment: Skobeloff Forest","category":"pigment"},"geometry":{"type":"Point","coordinates":[454.048,-263.418]}},
-        {"type":"Feature","properties":{"zone":"sandcavern_3","name":"Pigment: Sky Captains Spruce","category":"pigment"},"geometry":{"type":"Point","coordinates":[257.297,-270.812]}}
+        {"type":"Feature","properties":{"zone":"sandcavern_3","name":"Pigment: Sky Captains Spruce","category":"pigment"},"geometry":{"type":"Point","coordinates":[257.297,-270.812]}},
+        {"type":"Feature","properties":{"zone":"sandcavern","name":"Item: Sand Sensor I","category":"item"},"geometry":{"type":"Point","coordinates":[443.937,-266.531]}},
+{"type":"Feature","properties":{"zone":"sandcavern","name":"Item: Sand Sensor II","category":"item"},"geometry":{"type":"Point","coordinates":[414.561,-270.264]}},
+{"type":"Feature","properties":{"zone":"sandcavern","name":"Item: Sand Sensor III","category":"item"},"geometry":{"type":"Point","coordinates":[467.729,-250.555]}},
+{"type":"Feature","properties":{"zone":"sandcavern","name":"Item: Sand Sensor IV","category":"item"},"geometry":{"type":"Point","coordinates":[475.986,-217.359]}},
+{"type":"Feature","properties":{"zone":"sandcavern_2","name":"Item: Sand Sensor V","category":"item"},"geometry":{"type":"Point","coordinates":[255.418,-257.563]}},
+{"type":"Feature","properties":{"zone":"sandcavern_2","name":"Item: Sand Sensor VI","category":"item"},"geometry":{"type":"Point","coordinates":[283.828,-235.406]}}
   ]
 }
