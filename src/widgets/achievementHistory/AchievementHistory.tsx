@@ -35,6 +35,9 @@ const emojiForResult = (result: string): string => {
   if (normalized.includes("panda")) return "🐼";
   if (normalized.includes("self portrait")) return "👨‍🎨";
   if (normalized.includes("moonlit")) return "🌕";
+  if (normalized.includes("distorted ocean")) return "🌊";
+  if (normalized.includes("airship of ether")) return "✈️";
+  if (normalized.includes("destroyed city")) return "🌆";
   return "✨";
 };
 
