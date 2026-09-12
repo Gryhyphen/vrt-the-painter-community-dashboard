@@ -1,5 +1,141 @@
 [
   {
+    "datePainted": "2026-08-15",
+    "firstResultDiscovery": true,
+    "painter": "sumokau",
+    "pigment1": "Laminar Claret",
+    "pigment2": "Cornsilk Strand",
+    "result": "Scene: Cleft Of Dimension"
+  },
+  {
+    "datePainted": "2026-08-15",
+    "firstResultDiscovery": false,
+    "painter": "~kitty",
+    "pigment1": "True Eigengrau",
+    "pigment2": "Lusty Gallan",
+    "result": "Scene: Village In A Time Pocket"
+  },
+  {
+    "datePainted": "2026-08-15",
+    "firstResultDiscovery": false,
+    "painter": "~kitty",
+    "pigment1": "A Flame of Burnt Brandy",
+    "pigment2": "Cubic Periwinkle",
+    "result": "Subject: Crowd Of Travellers"
+  },
+  {
+    "datePainted": "2026-08-15",
+    "firstResultDiscovery": false,
+    "painter": "Pyachi",
+    "pigment1": "Eburnean Sky-Sail",
+    "pigment2": "Infinite Amethyst",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2026-08-15",
+    "firstResultDiscovery": false,
+    "painter": "Pyachi",
+    "pigment1": "Ten Thousand Emeralds",
+    "pigment2": "Old Guard Vogue Puce",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2026-08-15",
+    "firstResultDiscovery": false,
+    "painter": "redfireyoshi",
+    "pigment1": "Eburnean Sky-Sail",
+    "pigment2": "Phlox Paroxysm",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2026-08-15",
+    "firstResultDiscovery": false,
+    "painter": "redfireyoshi",
+    "pigment1": "Ashen Char",
+    "pigment2": "Celestial Obsidian",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2026-08-15",
+    "firstResultDiscovery": false,
+    "painter": "Bunnie",
+    "pigment1": "Cornsilk Strand",
+    "pigment2": "True Eigengrau",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2026-08-15",
+    "firstResultDiscovery": false,
+    "painter": "Bunnie",
+    "pigment1": "Chimerical Sarcoline",
+    "pigment2": "Oak Gall Ink",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2026-08-15",
+    "firstResultDiscovery": false,
+    "painter": "Becc la Ham",
+    "pigment1": "Phlox Paroxysm",
+    "pigment2": "Cornsilk Strand",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2026-08-15",
+    "firstResultDiscovery": false,
+    "painter": "Becc la Ham",
+    "pigment1": "Laminar Claret",
+    "pigment2": "Amaranthine Psychopomp",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2026-08-15",
+    "firstResultDiscovery": false,
+    "painter": "Polaris_Exists",
+    "pigment1": "Anomalous Neon",
+    "pigment2": "A Vague Sense of Unease",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2026-08-15",
+    "firstResultDiscovery": false,
+    "painter": "Polaris_Exists",
+    "pigment1": "Drunkard's Pillow",
+    "pigment2": "A Flame of Burnt Brandy",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2026-08-15",
+    "firstResultDiscovery": false,
+    "painter": "Smiles Saikou",
+    "pigment1": "Lusty Gallan",
+    "pigment2": "Drunkard's Pillow",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2026-08-15",
+    "firstResultDiscovery": false,
+    "painter": null,
+    "pigment1": "Ten Thousand Emeralds",
+    "pigment2": "Xanadu",
+    "result": "Scene: City Park"
+  },
+  {
+    "datePainted": "2026-08-15",
+    "firstResultDiscovery": false,
+    "painter": null,
+    "pigment1": "Caput Mortuum",
+    "pigment2": "Phlox Paroxysm",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2026-08-15",
+    "firstResultDiscovery": false,
+    "painter": null,
+    "pigment1": "Cornsilk Strand",
+    "pigment2": "Oak Gall Ink",
+    "result": "Abstract Mess"
+  },
+  {
     "datePainted": "2026-04-18",
     "firstResultDiscovery": true,
     "painter": "kruze",
@@ -916,7 +1052,7 @@
     "firstResultDiscovery": true,
     "painter": null,
     "pigment1": "Bianco di San Giovanni",
-    "pigment2": "Sinoper Shroud",
+    "pigment2": "Cherry on Top",
     "result": "Subject: Oddly Colored Mech"
   },
   {
@@ -924,7 +1060,7 @@
     "firstResultDiscovery": true,
     "painter": null,
     "pigment1": "Bianco di San Giovanni",
-    "pigment2": "Cherry on Top",
+    "pigment2": "Sinoper Shroud",
     "result": "Subject: Oddly Colored Mech"
   },
   {
@@ -964,7 +1100,7 @@
     "firstResultDiscovery": false,
     "painter": null,
     "pigment1": "Ancient Argent",
-    "pigment2": "Gormenghast Moss",
+    "pigment2": "Bianco di San Giovanni",
     "result": "Abstract Mess"
   },
   {
@@ -972,7 +1108,7 @@
     "firstResultDiscovery": false,
     "painter": null,
     "pigment1": "Ancient Argent",
-    "pigment2": "Bianco di San Giovanni",
+    "pigment2": "Gormenghast Moss",
     "result": "Abstract Mess"
   },
   {
@@ -1004,7 +1140,7 @@
     "firstResultDiscovery": false,
     "painter": null,
     "pigment1": "Bianco di San Giovanni",
-    "pigment2": "Warm Sienna",
+    "pigment2": "Plumbeous Cinder",
     "result": "Abstract Mess"
   },
   {
@@ -1012,7 +1148,7 @@
     "firstResultDiscovery": false,
     "painter": null,
     "pigment1": "Bianco di San Giovanni",
-    "pigment2": "Plumbeous Cinder",
+    "pigment2": "Warm Sienna",
     "result": "Abstract Mess"
   },
   {
@@ -1044,7 +1180,7 @@
     "firstResultDiscovery": false,
     "painter": null,
     "pigment1": "Ecru Winnower",
-    "pigment2": "Ten Thousand Emeralds",
+    "pigment2": "Phlox Paroxysm",
     "result": "Abstract Mess"
   },
   {
@@ -1052,7 +1188,7 @@
     "firstResultDiscovery": false,
     "painter": null,
     "pigment1": "Ecru Winnower",
-    "pigment2": "Phlox Paroxysm",
+    "pigment2": "Ten Thousand Emeralds",
     "result": "Abstract Mess"
   },
   {

@@ -38,6 +38,7 @@ const emojiForResult = (result: string): string => {
   if (normalized.includes("distorted ocean")) return "🌊";
   if (normalized.includes("airship of ether")) return "✈️";
   if (normalized.includes("destroyed city")) return "🌆";
+  if (normalized.includes("cleft of dimension")) return "🌌";
   return "✨";
 };
 

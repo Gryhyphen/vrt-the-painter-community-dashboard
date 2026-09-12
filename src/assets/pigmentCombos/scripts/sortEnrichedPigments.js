@@ -6,7 +6,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Path to the enriched pigments JSON file
-const filePath = path.join(__dirname, '..', 'src', 'assets', 'pigmentCombos', 'data', 'enriched', 'enrichedPigments.json');
+const filePath = path.join(__dirname, '..', '..', '..', '..', 'src', 'assets', 'pigmentCombos', 'data', 'enriched', 'enrichedPigments.json');
 
 // Read and parse the JSON file
 const data = fs.readFileSync(filePath, 'utf8');
