@@ -1,5 +1,69 @@
 [
   {
+    "datePainted": "2026-09-05",
+    "firstResultDiscovery": false,
+    "painter": "Either Memento",
+    "pigment1": "Cerulean-ish Ultramarine",
+    "pigment2": "Chimerical Sarcoline",
+    "result": "Scene: A Land Afar"
+  },
+  {
+    "datePainted": "2026-09-05",
+    "firstResultDiscovery": false,
+    "painter": "redfireyoshi",
+    "pigment1": "Rotting Pearl",
+    "pigment2": "Metalic Sands",
+    "result": "Subject: Airship Of Ether Infused Iron And Wood"
+  },
+  {
+    "datePainted": "2026-09-05",
+    "firstResultDiscovery": false,
+    "painter": "Pyachi",
+    "pigment1": "Drunkard's Pillow",
+    "pigment2": "Eburnean Sky-Sail",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2026-09-05",
+    "firstResultDiscovery": false,
+    "painter": "Xared",
+    "pigment1": "Infinite Amethyst",
+    "pigment2": "Cornsilk Strand",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2026-09-05",
+    "firstResultDiscovery": false,
+    "painter": "redfireyoshi",
+    "pigment1": "Crystaline Blue",
+    "pigment2": "True Eigengrau",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2026-09-05",
+    "firstResultDiscovery": false,
+    "painter": "Diarmuid",
+    "pigment1": "Oak Gall Ink",
+    "pigment2": "Ashen Char",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2026-09-05",
+    "firstResultDiscovery": false,
+    "painter": "Either Memento",
+    "pigment1": "Crystaline Blue",
+    "pigment2": "Laminar Claret",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2026-09-05",
+    "firstResultDiscovery": false,
+    "painter": "Gry-",
+    "pigment1": "Chimerical Sarcoline",
+    "pigment2": "A Flame of Burnt Brandy",
+    "result": "Abstract Mess"
+  },
+  {
     "datePainted": "2026-08-15",
     "firstResultDiscovery": true,
     "painter": "sumokau",
@@ -283,6 +347,14 @@
     "datePainted": "2026-04-18",
     "firstResultDiscovery": false,
     "painter": null,
+    "pigment1": "Ashen Char",
+    "pigment2": "Cherry on Top",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2026-04-18",
+    "firstResultDiscovery": false,
+    "painter": null,
     "pigment1": "A Vague Sense of Unease",
     "pigment2": "Han Purple",
     "result": "Abstract Mess"
@@ -293,14 +365,6 @@
     "painter": null,
     "pigment1": "Albescent Iridescence",
     "pigment2": "Warm Sienna",
-    "result": "Abstract Mess"
-  },
-  {
-    "datePainted": "2026-04-18",
-    "firstResultDiscovery": false,
-    "painter": null,
-    "pigment1": "Ashen Char",
-    "pigment2": "Cherry on Top",
     "result": "Abstract Mess"
   },
   {
