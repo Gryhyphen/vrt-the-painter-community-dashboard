@@ -88,6 +88,18 @@
 {"type":"Feature","properties":{"zone":"sandcavern","name":"Item: Sand Sensor III","category":"item"},"geometry":{"type":"Point","coordinates":[467.729,-250.555]}},
 {"type":"Feature","properties":{"zone":"sandcavern","name":"Item: Sand Sensor IV","category":"item"},"geometry":{"type":"Point","coordinates":[475.986,-217.359]}},
 {"type":"Feature","properties":{"zone":"sandcavern_2","name":"Item: Sand Sensor V","category":"item"},"geometry":{"type":"Point","coordinates":[255.418,-257.563]}},
-{"type":"Feature","properties":{"zone":"sandcavern_2","name":"Item: Sand Sensor VI","category":"item"},"geometry":{"type":"Point","coordinates":[283.828,-235.406]}}
+{"type":"Feature","properties":{"zone":"sandcavern_2","name":"Item: Sand Sensor VI","category":"item"},"geometry":{"type":"Point","coordinates":[283.828,-235.406]}},
+{"type":"Feature","properties":{"zone":"sandcavern_2","name":"Pigment: Han Purple","category":"pigment"},"geometry":{"type":"Point","coordinates":[484.123,-258.717]}},
+{"type":"Feature","properties":{"zone":"dazil","name":"Item: Shotgun","category":"item"},"geometry":{"type":"Point","coordinates":[-145.656,-250.313]}},
+{"type":"Feature","properties":{"zone":"dazil","name":"Item: Nomad's Garb","category":"item"},"geometry":{"type":"Point","coordinates":[-188.986,-232]}},
+{"type":"Feature","properties":{"zone":"dazil","name":"Item: Red Toolbox","category":"item"},"geometry":{"type":"Point","coordinates":[-179.351,-188.5]}},
+{"type":"Feature","properties":{"zone":"nortune_2","name":"Pigment: Oak Gall Ink","category":"pigment"},"geometry":{"type":"Point","coordinates":[-172.299,-568.938]}},
+{"type":"Feature","properties":{"zone":"bledavik","name":"Item: Melee Weapon","category":"item"},"geometry":{"type":"Point","coordinates":[-390.834,-232.25]}},
+{"type":"Feature","properties":{"zone":"bledavik","name":"Item: Big Dunes Hotel Voucher for 2 Day Stay","category":"item"},"geometry":{"type":"Point","coordinates":[-370.455,-183.375]}},
+{"type":"Feature","properties":{"zone":"bledavik","name":"Item: Cheap Beer","category":"item"},"geometry":{"type":"Point","coordinates":[-349.059,-197.688]}},
+{"type":"Feature","properties":{"zone":"bledavik","name":"Pigment: Gormenghast Moss","category":"pigment"},"geometry":{"type":"Point","coordinates":[-173.953,-2]}},
+{"type":"Feature","properties":{"zone":"sandcavern_2","name":"Pigment: Nadeshiko Pink","category":"pigment"},"geometry":{"type":"Point","coordinates":[469.807,-217.031]}},
+{"type":"Feature","properties":{"zone":"nortune","name":"Pigment: Infinite Amethyst","category":"pigment"},"geometry":{"type":"Point","coordinates":[-423.26,-560.533]}},
+{"type":"Feature","properties":{"zone":"nortune_2","name":"Pigment: Ethereal Mist","category":"pigment"},"geometry":{"type":"Point","coordinates":[-201.626,-594.436]}}
   ]
 }
