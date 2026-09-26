@@ -1,8 +1,240 @@
 [
   {
+    "datePainted": "2026-09-19",
+    "firstResultDiscovery": true,
+    "painter": "redfireyoshi",
+    "pigment1": "True Eigengrau",
+    "pigment2": "Albescent Iridescence",
+    "result": "Scene: Ethereal Void"
+  },
+  {
+    "datePainted": "2026-09-19",
+    "firstResultDiscovery": true,
+    "painter": "monster",
+    "pigment1": "Oak Gall Ink",
+    "pigment2": "Nattier",
+    "result": "Scene: Skyborne Monument"
+  },
+  {
+    "datePainted": "2026-09-19",
+    "firstResultDiscovery": true,
+    "painter": "Smiles Saikou",
+    "pigment1": "Infinite Amethyst",
+    "pigment2": "Ten Thousand Emeralds",
+    "result": "Subject: Emerald-Haired Girl Holding Mirror"
+  },
+  {
+    "datePainted": "2026-09-19",
+    "firstResultDiscovery": true,
+    "painter": "Diarmuid",
+    "pigment1": "A Flame of Burnt Brandy",
+    "pigment2": "Oak Gall Ink",
+    "result": "Subject: Orange Cat Wearing Eye Patch"
+  },
+  {
+    "datePainted": "2026-09-19",
+    "firstResultDiscovery": false,
+    "painter": "Pyachi (feat. D-B)",
+    "pigment1": "Old Guard Vogue Puce",
+    "pigment2": "Cerulean-ish Ultramarine",
+    "result": "Scene: A Land Afar"
+  },
+  {
+    "datePainted": "2026-09-19",
+    "firstResultDiscovery": false,
+    "painter": "PetTurtle",
+    "pigment1": "Nadeshiko Pink",
+    "pigment2": "Nattier",
+    "result": "Scene: A Land Afar"
+  },
+  {
+    "datePainted": "2026-09-19",
+    "firstResultDiscovery": false,
+    "painter": "Pyachi (feat. A-M)",
+    "pigment1": "Aureolin Virulence",
+    "pigment2": "Corrupted Vermilion",
+    "result": "Scene: Cleft Of Dimension"
+  },
+  {
+    "datePainted": "2026-09-19",
+    "firstResultDiscovery": false,
+    "painter": "pidge",
+    "pigment1": "Laminar Claret",
+    "pigment2": "Cornsilk Strand",
+    "result": "Scene: Cleft Of Dimension"
+  },
+  {
+    "datePainted": "2026-09-19",
+    "firstResultDiscovery": false,
+    "painter": "redfireyoshi",
+    "pigment1": "Rotting Pearl",
+    "pigment2": "Nadeshiko Pink",
+    "result": "Scene: Old Theatre"
+  },
+  {
+    "datePainted": "2026-09-19",
+    "firstResultDiscovery": false,
+    "painter": "Bunnie",
+    "pigment1": "Earthen Twine",
+    "pigment2": "Ashen Char",
+    "result": "Subject: Airship Of Ether Infused Iron And Wood"
+  },
+  {
+    "datePainted": "2026-09-19",
+    "firstResultDiscovery": false,
+    "painter": "Diarmuid",
+    "pigment1": "Ten Thousand Emeralds",
+    "pigment2": "True Eigengrau",
+    "result": "Subject: Tree Of Time"
+  },
+  {
+    "datePainted": "2026-09-19",
+    "firstResultDiscovery": false,
+    "painter": "kruze",
+    "pigment1": "Gormenghast Moss",
+    "pigment2": "Albescent Iridescence",
+    "result": "Subject: Tree Of Time"
+  },
+  {
+    "datePainted": "2026-09-19",
+    "firstResultDiscovery": false,
+    "painter": "Pyachi",
+    "pigment1": "Orpiment Tabby",
+    "pigment2": "Chimerical Sarcoline",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2026-09-19",
+    "firstResultDiscovery": false,
+    "painter": "Pyachi",
+    "pigment1": "Nattier",
+    "pigment2": "Inchoate Wossname",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2026-09-19",
+    "firstResultDiscovery": false,
+    "painter": "Pyachi",
+    "pigment1": "A Vague Sense of Unease",
+    "pigment2": "Cubic Periwinkle",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2026-09-19",
+    "firstResultDiscovery": false,
+    "painter": "Pyachi",
+    "pigment1": "Gilded Bronze",
+    "pigment2": "Xanadu",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2026-09-19",
+    "firstResultDiscovery": false,
+    "painter": "Pyachi (feat. D-B)",
+    "pigment1": "Laminar Claret",
+    "pigment2": "Drunkard's Pillow",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2026-09-19",
+    "firstResultDiscovery": false,
+    "painter": "Pyachi (feat. A-M)",
+    "pigment1": "Smaragdine Sea",
+    "pigment2": "Amaranthine Psychopomp",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2026-09-19",
+    "firstResultDiscovery": false,
+    "painter": "Xared",
+    "pigment1": "Warm Sienna",
+    "pigment2": "Drunkard's Pillow",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2026-09-19",
+    "firstResultDiscovery": false,
+    "painter": "Xared",
+    "pigment1": "Gilded Bronze",
+    "pigment2": "Oak Gall Ink",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2026-09-19",
+    "firstResultDiscovery": false,
+    "painter": "Starlight Angel",
+    "pigment1": "Inchoate Wossname",
+    "pigment2": "Crystaline Blue",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2026-09-19",
+    "firstResultDiscovery": false,
+    "painter": "Starlight Angel",
+    "pigment1": "Cubic Periwinkle",
+    "pigment2": "Laminar Claret",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2026-09-19",
+    "firstResultDiscovery": false,
+    "painter": "PetTurtle",
+    "pigment1": "Warm Sienna",
+    "pigment2": "Corrupted Vermilion",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2026-09-19",
+    "firstResultDiscovery": false,
+    "painter": "Gry-",
+    "pigment1": "Phlox Paroxysm",
+    "pigment2": "A Flame of Burnt Brandy",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2026-09-19",
+    "firstResultDiscovery": false,
+    "painter": "Gry-",
+    "pigment1": "Orpiment Tabby",
+    "pigment2": "Metalic Sands",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2026-09-19",
+    "firstResultDiscovery": false,
+    "painter": "monster",
+    "pigment1": "Phlox Paroxysm",
+    "pigment2": "Gormenghast Moss",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2026-09-19",
+    "firstResultDiscovery": false,
+    "painter": "sumokau",
+    "pigment1": "A Flame of Burnt Brandy",
+    "pigment2": "Warm Sienna",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2026-09-19",
+    "firstResultDiscovery": false,
+    "painter": "sumokau",
+    "pigment1": "Inchoate Wossname",
+    "pigment2": "Rotting Pearl",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2026-09-19",
+    "firstResultDiscovery": false,
+    "painter": "kruze",
+    "pigment1": "Drunkard's Pillow",
+    "pigment2": "Lusty Gallan",
+    "result": "Abstract Mess"
+  },
+  {
     "datePainted": "2026-09-05",
     "firstResultDiscovery": false,
-    "painter": "Either Memento",
+    "painter": "Ether Memento",
     "pigment1": "Cerulean-ish Ultramarine",
     "pigment2": "Chimerical Sarcoline",
     "result": "Scene: A Land Afar"
@@ -50,7 +282,7 @@
   {
     "datePainted": "2026-09-05",
     "firstResultDiscovery": false,
-    "painter": "Either Memento",
+    "painter": "Ether Memento",
     "pigment1": "Crystaline Blue",
     "pigment2": "Laminar Claret",
     "result": "Abstract Mess"
@@ -61,6 +293,38 @@
     "painter": "Gry-",
     "pigment1": "Chimerical Sarcoline",
     "pigment2": "A Flame of Burnt Brandy",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2026-09-05",
+    "firstResultDiscovery": false,
+    "painter": "sumokau",
+    "pigment1": "Caput Mortuum",
+    "pigment2": "Laminar Claret",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2026-09-05",
+    "firstResultDiscovery": false,
+    "painter": "sumokau",
+    "pigment1": "Ethereal Mist",
+    "pigment2": "Rotting Pearl",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2026-09-05",
+    "firstResultDiscovery": false,
+    "painter": "Pyachi",
+    "pigment1": "Cherry on Top",
+    "pigment2": "Ashen Char",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2026-09-05",
+    "firstResultDiscovery": false,
+    "painter": "Diarmuid",
+    "pigment1": "Ecru Winnower",
+    "pigment2": "Horizon Bound",
     "result": "Abstract Mess"
   },
   {
@@ -78,6 +342,14 @@
     "pigment1": "True Eigengrau",
     "pigment2": "Lusty Gallan",
     "result": "Scene: Village In A Time Pocket"
+  },
+  {
+    "datePainted": "2026-08-15",
+    "firstResultDiscovery": false,
+    "painter": "Luminus 9-4",
+    "pigment1": "Laminar Claret",
+    "pigment2": "Chimerical Sarcoline",
+    "result": "Subject: A Heart Held Close"
   },
   {
     "datePainted": "2026-08-15",
@@ -234,6 +506,14 @@
   {
     "datePainted": "2026-04-18",
     "firstResultDiscovery": false,
+    "painter": "monster",
+    "pigment1": "Amaranthine Psychopomp",
+    "pigment2": "Crystaline Blue",
+    "result": "Scene: Magical Catdom"
+  },
+  {
+    "datePainted": "2026-04-18",
+    "firstResultDiscovery": false,
     "painter": "Luminus 9-4",
     "pigment1": "Old Guard Vogue Puce",
     "pigment2": "Cherry on Top",
@@ -325,6 +605,22 @@
     "painter": "uyjulian",
     "pigment1": "Sky Captain's Spruce",
     "pigment2": "Cubic Periwinkle",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2026-04-18",
+    "firstResultDiscovery": false,
+    "painter": "binny",
+    "pigment1": "Cerulean-ish Ultramarine",
+    "pigment2": "True Eigengrau",
+    "result": "Abstract Mess"
+  },
+  {
+    "datePainted": "2026-04-18",
+    "firstResultDiscovery": false,
+    "painter": "binny",
+    "pigment1": "Aureolin Virulence",
+    "pigment2": "Phlox Paroxysm",
     "result": "Abstract Mess"
   },
   {
