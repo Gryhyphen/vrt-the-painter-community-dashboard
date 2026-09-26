@@ -39,6 +39,10 @@ const emojiForResult = (result: string): string => {
   if (normalized.includes("airship of ether")) return "✈️";
   if (normalized.includes("destroyed city")) return "🌆";
   if (normalized.includes("cleft of dimension")) return "🌌";
+  if (normalized.includes("ethereal void")) return "🕳️";
+  if (normalized.includes("skyborne monument")) return "🗿";
+  if (normalized.includes("girl holding mirror")) return "🪞";
+  if (normalized.includes("orange cat wearing eye patch")) return "🐈";
   return "✨";
 };
 
