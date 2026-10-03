@@ -100,6 +100,9 @@
 {"type":"Feature","properties":{"zone":"bledavik","name":"Pigment: Gormenghast Moss","category":"pigment"},"geometry":{"type":"Point","coordinates":[-173.953,-2]}},
 {"type":"Feature","properties":{"zone":"sandcavern_2","name":"Pigment: Nadeshiko Pink","category":"pigment"},"geometry":{"type":"Point","coordinates":[469.807,-217.031]}},
 {"type":"Feature","properties":{"zone":"nortune","name":"Pigment: Infinite Amethyst","category":"pigment"},"geometry":{"type":"Point","coordinates":[-423.26,-560.533]}},
-{"type":"Feature","properties":{"zone":"nortune_2","name":"Pigment: Ethereal Mist","category":"pigment"},"geometry":{"type":"Point","coordinates":[-201.626,-594.436]}}
+{"type":"Feature","properties":{"zone":"nortune_2","name":"Pigment: Ethereal Mist","category":"pigment"},"geometry":{"type":"Point","coordinates":[-201.626,-594.436]}},
+{"type":"Feature","properties":{"zone":"sandcavern_3","name":"Pigment: Anomalous Neon","category":"pigment"},"geometry":{"type":"Point","coordinates":[241.48,-286.063]}},
+{"type":"Feature","properties":{"zone":"bledavik","name":"Pigment: Caput Mortuum","category":"pigment"},"geometry":{"type":"Point","coordinates":[-373.652,-231.813]}},
+{"type":"Feature","properties":{"zone":"sandcavern","name":"Pigment: Ancient Argent","category":"pigment"},"geometry":{"type":"Point","coordinates":[344.991,-439.984]}}
   ]
 }
