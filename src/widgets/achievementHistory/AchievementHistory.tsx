@@ -1,3 +1,4 @@
+import { useState } from "react";
 import HistoryData from "../../assets/pigmentCombos/data/enriched/enrichedPigments.json";
 
 type Achievement = (typeof HistoryData)[number];
@@ -93,12 +94,24 @@ const sorted = [...HistoryData].sort((a, b) => {
 const grouped = groupByMonth(sorted);
 
 export default function AchievementHistory(props: IAchievementHistoryProps) {
+  const [showOnlyFirstCombined, setShowOnlyFirstCombined] = useState(false);
+
   return (
     <div
       style={{ ...defaultStyle, ...props.style }}
       className={props.className}
     >
-      <h2>History</h2>
+      <div style={{display: "flex", alignItems: "end"}}>
+        <h2 style={{marginBottom: 0 }}>History</h2>
+        <label style={{marginLeft: "auto"}}>
+          <input
+            type="checkbox"
+            checked={showOnlyFirstCombined}
+            onChange={(e) => setShowOnlyFirstCombined(e.target.checked)}
+          />
+          Only first discovered
+        </label>
+      </div>
       {Object.entries(grouped).map(([monthLabel, items], index) => (
         <div key={monthLabel}>
           {/* Section Header */}
@@ -117,7 +130,7 @@ export default function AchievementHistory(props: IAchievementHistoryProps) {
               gap: 12,
             }}
           >
-            {items.map((x, i) => {
+            {items.filter(x => !showOnlyFirstCombined ? true : x.firstResultDiscovery).map((x, i) => {
               const isFirst = x.firstResultDiscovery;
 
               return (
