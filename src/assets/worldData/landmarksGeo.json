@@ -71,7 +71,7 @@
 {"type":"Feature","properties":{"zone":"lahanVillage","name":"Pigment: A Vague Sense of Unease","category":"pigment"},"geometry":{"type":"Point","coordinates":[-128.207,40.375]}},
 {"type":"Feature","properties":{"zone":"sandcavern_3","name":"Pigment: Plumbeous Cinder","category":"pigment"},"geometry":{"type":"Point","coordinates":[259.415,-282.25]}},
        {"type":"Feature","properties":{"zone":"lahanVillage","name":"Pigment: Laminar Claret","category":"pigment"},"geometry":{"type":"Point","coordinates":[-154.797,1.703]}},
-        {"type":"Feature","properties":{"zone":"bledavik","name":"Pigment: Crystalline Blue","category":"pigment"},"geometry":{"type":"Point","coordinates":[-393.488,-198.063]}},
+        {"type":"Feature","properties":{"zone":"bledavik","name":"Pigment: Crystaline Blue","category":"pigment"},"geometry":{"type":"Point","coordinates":[-393.488,-198.063]}},
         {"type":"Feature","properties":{"zone":"lahanVillage","name":"Pigment: Orpiment Tabby","category":"pigment"},"geometry":{"type":"Point","coordinates":[-132.011,-5.26]}},
         {"type":"Feature","properties":{"zone":"dazil","name":"Pigment: Corrupted Vermilion","category":"pigment"},"geometry":{"type":"Point","coordinates":[-174.816,-185.409]}},
         {"type":"Feature","properties":{"zone":"nortune","name":"Pigment: Inchoate Wossname","category":"pigment"},"geometry":{"type":"Point","coordinates":[-386.801,-587.181]}},
