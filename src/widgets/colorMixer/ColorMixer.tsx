@@ -19,6 +19,15 @@ const allPossibleCombos = allPossiblePigments.flatMap((p1) =>
     .map((p2) => ({ pigment1: p1, pigment2: p2 }))
 );
 
+// TODO: Remove this normalization once pigment name canonicalization is fixed in the data pipeline.
+// "A Flame of Burnt Brandy" (cleaned data) doesn't match "Flame of Burnt Brandy" (landmarksGeo.json).
+// "Sky Captain's Spruce" (cleaned data) doesn't match "Sky Captains Spruce" (landmarksGeo.json).
+function normalizePigmentNameForLookup(name: string): string {
+  if (name === "A Flame of Burnt Brandy") return "Flame of Burnt Brandy";
+  if (name === "Sky Captain's Spruce") return "Sky Captains Spruce";
+  return name;
+}
+
 /**
  * Dirty hack to calculate region compatibility. Should be moved to enrichment in the pipeline at some point.
  * @param pigment1
@@ -29,11 +38,13 @@ function CalculateRegionCompatibility(pigment1: string, pigment2: string) {
   // Dirty hack, reusing the landmark datasource because if I had to use the raw pigment data
   // then I would need to backdate, map and cleanup the zone ids.
   // TODO: Enrich pigment data with zones from world data, rather then calculating on the fly.
+  const normalizedPigment1 = normalizePigmentNameForLookup(pigment1);
+  const normalizedPigment2 = normalizePigmentNameForLookup(pigment2);
   const pigment1Landmark = LandmarkData.features.find((x) =>
-    x.properties.name.match(new RegExp(pigment1, "i"))
+    x.properties.name.match(new RegExp(normalizedPigment1, "i"))
   );
   const pigment2Landmark = LandmarkData.features.find((x) =>
-    x.properties.name.match(new RegExp(pigment2, "i"))
+    x.properties.name.match(new RegExp(normalizedPigment2, "i"))
   );
   if (!(pigment1Landmark && pigment2Landmark)) return true; // We don't know so assume true
 
