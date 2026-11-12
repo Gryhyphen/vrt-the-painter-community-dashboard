@@ -43,6 +43,7 @@ const emojiForResult = (result: string): string => {
   if (normalized.includes("ethereal void")) return "🕳️";
   if (normalized.includes("skyborne monument")) return "🗿";
   if (normalized.includes("girl holding mirror")) return "🪞";
+  if (normalized.includes("angelic mermaid")) return "🧜‍♀️";
   if (normalized.includes("orange cat wearing eye patch")) return "🐈";
   return "✨";
 };
